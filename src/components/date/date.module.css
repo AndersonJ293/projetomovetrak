@@ -1,0 +1,17 @@
+.container {
+    width: 140px;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-family: var(--textFont);
+    font-size: 12px;
+}
+
+.subtitle {
+    font-family: var(--titleFont);
+    font-size: 12px;
+    font-weight: 700;
+}
