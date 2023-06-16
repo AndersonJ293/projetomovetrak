@@ -1,0 +1,7 @@
+.container {
+    width: 130px;
+    height: 70px;
+    background-color: var(--gray);
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
