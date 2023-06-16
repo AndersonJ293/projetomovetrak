@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 * {
 	box-sizing: border-box;
@@ -28,5 +29,12 @@ a {
 }
 
 :root {
-	--vermelho: #cf0a0a;
+	--red: #cf0a0a;
+	--orange: #dc5f00;
+	--yellow: #fdaa0b;
+	--green: #1eb106;
+	--titleFont: 'Poppins', sans-serif;
+	--textFont: 'Montserrat', sans-serif;
+	--maxWidth: 1200px;
+	--maxHeight: 100vh;
 }
