@@ -1,0 +1,111 @@
+.container {
+    width: 800px;
+    height: 280px;
+    background-color: var(--gray);
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    height: 25%;
+    width: 95%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titleText {
+    font-family: var(--titleFont);
+    font-size: 24px;
+}
+
+.seeAllButton {
+    width: 100px;
+    height: 30px;
+    background-color: var(--red);
+    cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonText {
+    font-family: var(--titleFont);
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.subHeader, .entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.subHeader > p {
+    font-family: var(--textFont);
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 0.5px solid #0004;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.typeText {
+    width: 20%;
+}
+
+.actionText {
+    width: 45%;
+}
+
+.userText {
+    width: 20%;
+}
+
+.dateText {
+    width: 15%;
+}
+
+.entry > p {
+    font-family: var(--textFont);
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 0.5px solid #0004;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.entry:last-of-type {
+    border: none;
+}
+
+.pageSelector {
+    font-family: var(--textFont);
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-self: flex-end;
+    margin: 10px 30px;
+    bottom: 10px;
+    justify-self: flex-end;
+}
+
+.changePage {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 20px;
+}
