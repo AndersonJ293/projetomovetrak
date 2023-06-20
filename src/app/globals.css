@@ -33,6 +33,8 @@ a {
 	--yellow: #fdaa0b;
 	--green: #1eb106;
 	--gray: #f8f8fa;
+	--darkGray: #8F8E98;
+	--black: #231F20;
 	--titleFont: 'Poppins', sans-serif;
 	--textFont: 'Montserrat', sans-serif;
 	--maxWidth: 1200px;
