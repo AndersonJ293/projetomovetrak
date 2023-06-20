@@ -22,13 +22,17 @@ export default function RegistrosDashboard() {
           <span className={styles.buttonText}>Ver Todos</span>
         </div>
       </div>
-      <div className={styles.subHeader}>
-        <p className={styles.typeText}>Tipo</p>
-        <p className={styles.actionText}>Ação</p>
-        <p className={styles.userText}>Usuário</p>
-        <p className={styles.dateText}>Data</p>
+      <div className={styles.table}>
+        <div className={styles.subHeader}>
+          <p className={styles.typeText}>Tipo</p>
+          <p className={styles.actionText}>Ação</p>
+          <p className={styles.userText}>Usuário</p>
+          <p className={styles.dateText}>Data</p>
+        </div>
+        {renderizarEntradas()}
+        {renderizarEntradas()}
+        {renderizarEntradas()}
       </div>
-      {renderizarEntradas()}
       <div className={styles.pageSelector}>
         <p className={styles.selectorText}>1 - 3 de 20</p>
         <div className={styles.changePage}>{`<`}</div>
