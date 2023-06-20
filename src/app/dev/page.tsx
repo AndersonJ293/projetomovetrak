@@ -1,4 +1,4 @@
-import RotasDashboard from "@/components/dashboard/rotas";
+import SeletorRelatorio from "@/components/relatorios/seletor";
 
 export default function Dev() {
   return (
@@ -10,7 +10,7 @@ export default function Dev() {
         height: "100vh",
       }}
     >
-      <RotasDashboard />
+      <SeletorRelatorio />
     </div>
   );
 }

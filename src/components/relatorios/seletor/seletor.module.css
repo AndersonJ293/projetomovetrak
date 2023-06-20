@@ -1,0 +1,57 @@
+.container {
+    width: 1100px;
+    height: 150px;
+    background-color: var(--gray);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.reportContainer {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.dateContainer {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.individualSelector {
+    display: flex;
+    flex-direction: column;
+}
+
+.reportText {
+    font-family: var(--titleFont);
+    font-weight: 500;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.reportSelector {
+    width: 330px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    padding-left: 15px;
+    color: var(--darkGray);
+}
+
+.divider {
+    height: 90%;
+    width: 2px;
+    background-color: #a7a7a7;
+    border-radius: 5px;
+}
+
+.dateSelector {
+
+}
