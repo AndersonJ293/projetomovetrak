@@ -7,7 +7,7 @@ export default function UserHeader() {
     return (
         <div className={styles.container}>
             <div className={styles.left}>
-                <Image className={styles.foto} width={50} height={50} alt="" src={ProfilePlaceholder} />
+                <Image className={styles.foto} width={45} height={45} alt="" src={ProfilePlaceholder} />
                 <div className={styles.info}>
                     <h1 className={styles.nome}>Victor</h1>
                     <h2 className={styles.email}>victor.castro@movetrak</h2>
