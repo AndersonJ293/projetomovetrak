@@ -9,6 +9,12 @@
 
 .icon {
     margin: 0 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.icon:hover {
+    transform: scale(1.05);
 }
 
 .input {

@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 290px;
+    height: 50px;
+}
+
+.left {
+    display: flex;
+    flex: 1;
+}
+
+.foto {
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 50%;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 2;
+    padding-left: 10px;
+}
+
+.nome {
+    font-family: var(--titleFont);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.email {
+    font-family: var(--textFont);
+    font-size: 12px;
+    font-weight: 600;
+    color: #0004;
+}
+
+.iconDiv {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.iconDiv:hover {
+    background-color: #e1e1ea;
+}
