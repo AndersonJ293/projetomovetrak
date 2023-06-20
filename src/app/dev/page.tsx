@@ -1,4 +1,4 @@
-import RegistrosDashboard from "@/components/dashboard/registros";
+import RotasDashboard from "@/components/dashboard/rotas";
 
 export default function Dev() {
   return (
@@ -10,7 +10,7 @@ export default function Dev() {
         height: "100vh",
       }}
     >
-      <RegistrosDashboard />
+      <RotasDashboard />
     </div>
   );
 }
