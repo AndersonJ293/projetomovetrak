@@ -1,6 +1,6 @@
 .container {
-    width: 285px;
-    height: 580px;
+    width: 300px;
+    height: 560px;
     background-color: var(--gray);
     border-radius: 10px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
