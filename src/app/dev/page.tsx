@@ -1,4 +1,4 @@
-import ResultadosRelatorio from "@/components/relatorios/resultados";
+import CabecalhoProprietario from "@/components/proprietarios/cabecalho";
 
 export default function Dev() {
   return (
@@ -10,7 +10,7 @@ export default function Dev() {
         height: "100vh",
       }}
     >
-      <ResultadosRelatorio />
+      <CabecalhoProprietario />
     </div>
   );
 }
