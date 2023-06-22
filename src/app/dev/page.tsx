@@ -1,4 +1,4 @@
-import FiltroColunasRelatorios from "@/components/relatorios/filtroColunas";
+import ResultadosRelatorio from "@/components/relatorios/resultados";
 
 export default function Dev() {
   return (
@@ -10,7 +10,7 @@ export default function Dev() {
         height: "100vh",
       }}
     >
-      <FiltroColunasRelatorios />
+      <ResultadosRelatorio />
     </div>
   );
 }
