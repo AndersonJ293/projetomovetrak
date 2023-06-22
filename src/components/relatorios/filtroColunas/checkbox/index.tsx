@@ -5,6 +5,7 @@ import styles from "./checkbox.module.css";
 interface CheckboxProps {
   label: string;
   checked: boolean;
+  id: string;
 }
 
 export default function Checkbox(props: CheckboxProps) {
@@ -13,8 +14,9 @@ export default function Checkbox(props: CheckboxProps) {
 
   return (
     <div className={styles.checkboxWrapper}>
-      <label>
+      <label htmlFor={props.id}>
         <input
+          id={props.id}
           className={styles.checkbox}
           type="checkbox"
           checked={isChecked}

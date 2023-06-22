@@ -5,6 +5,7 @@
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     display: flex;
+    cursor: pointer;
 }
 
 .labelText {
@@ -12,6 +13,7 @@
     font-weight: 500;
     font-size: 14px;
     padding-left: 5px;
+    cursor: pointer;
 }
 
 .checkbox {
