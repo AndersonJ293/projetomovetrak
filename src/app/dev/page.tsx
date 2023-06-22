@@ -1,4 +1,4 @@
-import CabecalhoRelatorios from "@/components/relatorios/cabecalho";
+import FiltroColunasRelatorios from "@/components/relatorios/filtroColunas";
 
 export default function Dev() {
   return (
@@ -10,7 +10,7 @@ export default function Dev() {
         height: "100vh",
       }}
     >
-      <CabecalhoRelatorios />
+      <FiltroColunasRelatorios />
     </div>
   );
 }
