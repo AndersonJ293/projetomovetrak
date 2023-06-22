@@ -1,0 +1,75 @@
+.container {
+    width: 1100px;
+    height: 500px;
+    background-color: var(--gray);
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.dataContainer {
+    width: 98%;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.textContainer {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--textFont);
+}
+
+.name {
+    width: 35%;
+}
+
+.cpf {
+    width: 25%;
+}
+
+.school {
+    width: 30%;
+}
+
+.situation {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--green);
+
+}
+
+.buttonsContainer {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.smallButton {
+    width: 25px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: var(--orange);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editButton {
+    width: 140px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: var(--orange);
+    cursor: pointer;
+}

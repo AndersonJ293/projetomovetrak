@@ -1,4 +1,4 @@
-import CabecalhoProprietario from "@/components/proprietarios/cabecalho";
+import DadosProprietarios from "@/components/proprietarios/dados";
 
 export default function Dev() {
   return (
@@ -10,7 +10,7 @@ export default function Dev() {
         height: "100vh",
       }}
     >
-      <CabecalhoProprietario />
+      <DadosProprietarios />
     </div>
   );
 }
