@@ -11,7 +11,6 @@ export default function ResultadosRelatorio() {
         <span className={styles.fim}>Fim</span>
         <span className={styles.quilometragem}>Quilometragem</span>
         <span className={styles.duracao}>Duração</span>
-        <span className={styles.teste}>Teste</span>
       </div>
       <div className={styles.reportResult}>
         <span className={styles.agrupamento}>PLL6H83</span>
@@ -24,9 +23,6 @@ export default function ResultadosRelatorio() {
         <span className={styles.fim}>23.05.2023 12:30:00</span>
         <span className={styles.quilometragem}>12 km</span>
         <span className={styles.duracao}>02:00:00</span>
-        <span className={styles.teste}>
-          aisgasghasgojihsjhnsujdhsdjdgsldgjasgfagasgsgasgsagsgisdgsdhsdhfdhshsfgh
-        </span>
       </div>
     </div>
   );
