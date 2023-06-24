@@ -18,44 +18,47 @@ export default function NavBar() {
     <div
       className={`${styles.container} ${aberto ? "" : styles.containerClosed}`}
     >
+      {/* logo  */}
+      <Link href={"/dashboard"}>
+        <Image
+          className={styles.logo}
+          width={0}
+          height={45}
+          src={aberto ? Logo : MinimalLogo}
+          alt="Logo Movetrak"
+        />
+      </Link>
+      {/* proprietarios */}
       <div className={styles.buttonList}>
-        <Link href={"/dashboard"}>
-          <Image
-            className={styles.logo}
-            width={0}
-            height={45}
-            src={aberto ? Logo : MinimalLogo}
-            alt="Logo Movetrak"
-          />
-        </Link>
-        <div
-          className={`${styles.buttonDiv} ${
-            aberto ? "" : styles.buttonDivFechado
-          }`}
-          onClick={() => setAberto(!aberto)}
-        >
-          <Image
-            className={styles.menuIcon}
-            height={25}
-            width={25}
-            src={AddUser}
-            alt="Adicionar Usuário"
-          />
-          <Link href={"/proprietarios"}>
+        <Link href={"/proprietarios"}>
+          <div
+            className={`${styles.buttonDiv} ${
+              aberto ? "" : styles.buttonDivFechado
+            }`}
+          >
+            <Image
+              className={styles.menuIcon}
+              height={25}
+              width={25}
+              src={AddUser}
+              alt="Adicionar Usuário"
+            />
             <span
               className={`${styles.menuText} ${
                 aberto ? "" : styles.menuTextFechado
               }`}
             >
-              Adicionar Usuário
+              Proprietários
             </span>
-          </Link>
-        </div>
+          </div>
+        </Link>
+
+        {/* relatorios */}
         <div
           className={`${styles.buttonDiv} ${
             aberto ? "" : styles.buttonDivFechado
           }`}
-          onClick={() => setAberto(!aberto)}
+          // onClick={() => setAberto(!aberto)}
         >
           <Image
             className={styles.menuIcon}
@@ -72,11 +75,12 @@ export default function NavBar() {
             Relatórios
           </span>
         </div>
+        {/* rotas */}
         <div
           className={`${styles.buttonDiv} ${
             aberto ? "" : styles.buttonDivFechado
           }`}
-          onClick={() => setAberto(!aberto)}
+          // onClick={() => setAberto(!aberto)}
         >
           <Image
             className={styles.menuIcon}
@@ -93,11 +97,12 @@ export default function NavBar() {
             Rotas
           </span>
         </div>
+        {/* usuarios */}
         <div
           className={`${styles.buttonDiv} ${
             aberto ? "" : styles.buttonDivFechado
           }`}
-          onClick={() => setAberto(!aberto)}
+          // onClick={() => setAberto(!aberto)}
         >
           <Image
             className={styles.menuIcon}
@@ -115,11 +120,12 @@ export default function NavBar() {
           </span>
         </div>
       </div>
+      {/* sair */}
       <div
         className={`${styles.buttonDiv} ${styles.logOutButton} ${
           aberto ? "" : styles.buttonDivFechado
         }`}
-        onClick={() => setAberto(!aberto)}
+        // onClick={() => setAberto(!aberto)}
       >
         <Image
           className={styles.menuIcon}
@@ -136,6 +142,7 @@ export default function NavBar() {
           Sair
         </span>
       </div>
+      {/* hover */}
       <div
         className={`${styles.verticalLine} ${
           aberto ? styles.verticalLineAberto : ""

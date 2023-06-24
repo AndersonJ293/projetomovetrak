@@ -13,7 +13,7 @@ export default function Proprietarios() {
       <div className={styles.container}>
         <div className={styles.headerLine}>
           <Date />
-          <SearchBar />
+          Proprietários
           <UserHeader />
         </div>
         <div className={styles.screen}>
