@@ -1,5 +1,5 @@
 .container {
-    width: 1100px;
+    width: 90vw;
     height: 500px;
     background-color: var(--gray);
     border-radius: 10px;
@@ -11,21 +11,22 @@
 }
 
 .dataContainer {
-    width: 98%;
+    width: 99%;
     height: 50px;
     background-color: #fff;
     border-radius: 10px;
     padding: 0 10px;
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .textContainer {
     width: 70%;
     display: flex;
     align-items: center;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
     font-family: var(--textFont);
 }
 
@@ -41,12 +42,18 @@
     width: 30%;
 }
 
+.situationc {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .situation {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background-color: var(--green);
-
 }
 
 .buttonsContainer {

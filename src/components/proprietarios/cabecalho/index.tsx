@@ -19,7 +19,7 @@ export default function CabecalhoProprietario() {
         </div>
 
         <div className={styles.button}>
-          <span>+ Cadastrar</span>
+          <span>Cadastrar</span>
         </div>
       </div>
     </div>
