@@ -19,7 +19,7 @@ export default function NavBar() {
       className={`${styles.container} ${aberto ? "" : styles.containerClosed}`}
     >
       {/* logo  */}
-      <Link href={"/dashboard"}>
+      <Link title="DashBoard" href={"/dashboard"}>
         <Image
           className={styles.logo}
           width={0}
@@ -30,7 +30,7 @@ export default function NavBar() {
       </Link>
       {/* proprietarios */}
       <div className={styles.buttonList}>
-        <Link href={"/proprietarios"}>
+        <Link title="Proprietários" href={"/proprietarios"}>
           <div
             className={`${styles.buttonDiv} ${
               aberto ? "" : styles.buttonDivFechado
@@ -54,94 +54,98 @@ export default function NavBar() {
         </Link>
 
         {/* relatorios */}
-        <div
-          className={`${styles.buttonDiv} ${
-            aberto ? "" : styles.buttonDivFechado
-          }`}
-          // onClick={() => setAberto(!aberto)}
-        >
-          <Image
-            className={styles.menuIcon}
-            height={25}
-            width={25}
-            src={File}
-            alt="Relatórios"
-          />
-          <span
-            className={`${styles.menuText} ${
-              aberto ? "" : styles.menuTextFechado
+        <Link title="Relatórios" href={"/relatorios"}>
+          <div
+            className={`${styles.buttonDiv} ${
+              aberto ? "" : styles.buttonDivFechado
             }`}
           >
-            Relatórios
-          </span>
-        </div>
+            <Image
+              className={styles.menuIcon}
+              height={25}
+              width={25}
+              src={File}
+              alt="Relatórios"
+            />
+            <span
+              className={`${styles.menuText} ${
+                aberto ? "" : styles.menuTextFechado
+              }`}
+            >
+              Relatórios
+            </span>
+          </div>
+        </Link>
         {/* rotas */}
-        <div
-          className={`${styles.buttonDiv} ${
-            aberto ? "" : styles.buttonDivFechado
-          }`}
-          // onClick={() => setAberto(!aberto)}
-        >
-          <Image
-            className={styles.menuIcon}
-            height={25}
-            width={25}
-            src={Route}
-            alt="Rotas"
-          />
-          <span
-            className={`${styles.menuText} ${
-              aberto ? "" : styles.menuTextFechado
+        <Link title="Rotas" href={"/rotas"}>
+          <div
+            className={`${styles.buttonDiv} ${
+              aberto ? "" : styles.buttonDivFechado
             }`}
           >
-            Rotas
-          </span>
-        </div>
+            <Image
+              className={styles.menuIcon}
+              height={25}
+              width={25}
+              src={Route}
+              alt="Rotas"
+            />
+            <span
+              className={`${styles.menuText} ${
+                aberto ? "" : styles.menuTextFechado
+              }`}
+            >
+              Rotas
+            </span>
+          </div>
+        </Link>
         {/* usuarios */}
-        <div
-          className={`${styles.buttonDiv} ${
-            aberto ? "" : styles.buttonDivFechado
-          }`}
-          // onClick={() => setAberto(!aberto)}
-        >
-          <Image
-            className={styles.menuIcon}
-            height={25}
-            width={25}
-            src={Group}
-            alt="Usuários"
-          />
-          <span
-            className={`${styles.menuText} ${
-              aberto ? "" : styles.menuTextFechado
+        <Link title="Usuários" href={"/usuarios"}>
+          <div
+            className={`${styles.buttonDiv} ${
+              aberto ? "" : styles.buttonDivFechado
             }`}
           >
-            Usuários
-          </span>
-        </div>
+            <Image
+              className={styles.menuIcon}
+              height={25}
+              width={25}
+              src={Group}
+              alt="Usuários"
+            />
+            <span
+              className={`${styles.menuText} ${
+                aberto ? "" : styles.menuTextFechado
+              }`}
+            >
+              Usuários
+            </span>
+          </div>
+        </Link>
       </div>
       {/* sair */}
-      <div
-        className={`${styles.buttonDiv} ${styles.logOutButton} ${
-          aberto ? "" : styles.buttonDivFechado
-        }`}
-        // onClick={() => setAberto(!aberto)}
-      >
-        <Image
-          className={styles.menuIcon}
-          height={25}
-          width={25}
-          src={Exit}
-          alt="Sair"
-        />
-        <span
-          className={`${styles.menuText} ${
-            aberto ? "" : styles.menuTextFechado
+      <Link title="Sair" href={"/"}>
+        <div
+          className={`${styles.buttonDiv} ${styles.logOutButton} ${
+            aberto ? "" : styles.buttonDivFechado
           }`}
         >
-          Sair
-        </span>
-      </div>
+          <Image
+            className={styles.menuIcon}
+            height={25}
+            width={25}
+            src={Exit}
+            alt="Sair"
+          />
+          <span
+            className={`${styles.menuText} ${
+              aberto ? "" : styles.menuTextFechado
+            }`}
+          >
+            Sair
+          </span>
+        </div>
+      </Link>
       {/* hover */}
       <div
         className={`${styles.verticalLine} ${
