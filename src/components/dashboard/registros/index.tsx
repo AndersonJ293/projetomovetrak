@@ -19,7 +19,7 @@ export default function RegistrosDashboard() {
       <div className={styles.header}>
         <h1 className={styles.titleText}>Últimos Registros</h1>
         <div className={styles.seeAllButton}>
-          <span className={styles.buttonText}>Ver Todos</span>
+          Ver Todos
         </div>
       </div>
       <div className={styles.table}>
@@ -34,7 +34,7 @@ export default function RegistrosDashboard() {
         {renderizarEntradas()}
       </div>
       <div className={styles.pageSelector}>
-        <p className={styles.selectorText}>1 - 3 de 20</p>
+        1 - 3 de 20
         <div className={styles.changePage}>{`<`}</div>
         <div className={styles.changePage}>{`>`}</div>
       </div>

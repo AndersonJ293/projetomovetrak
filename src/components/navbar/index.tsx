@@ -11,30 +11,35 @@ import Group from "../../assets/icons/group.png";
 import Route from "../../assets/icons/route.png";
 import Arrow from "../../assets/icons/arrow.png";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function NavBar() {
   const [aberto, setAberto] = useState(false);
+  const pathname = usePathname();
+
   return (
     <div
       className={`${styles.container} ${aberto ? "" : styles.containerClosed}`}
     >
       {/* logo  */}
       <Link title="DashBoard" href={"/dashboard"}>
-        <Image
-          className={styles.logo}
-          width={0}
-          height={45}
-          src={aberto ? Logo : MinimalLogo}
-          alt="Logo Movetrak"
-        />
+        <div className={`${styles.buttonDiv} ${aberto ? "" : styles.buttonDivFechado
+          } ${pathname === "/dashboard" ? styles.activeButton : ""} `}>
+          <Image
+            className={styles.logo}
+            width={0}
+            height={35}
+            src={aberto ? Logo : MinimalLogo}
+            alt="Logo Movetrak"
+          />
+        </div>
       </Link>
       {/* proprietarios */}
       <div className={styles.buttonList}>
         <Link title="Proprietários" href={"/proprietarios"}>
           <div
-            className={`${styles.buttonDiv} ${
-              aberto ? "" : styles.buttonDivFechado
-            }`}
+            className={`${styles.buttonDiv} ${aberto ? "" : styles.buttonDivFechado
+              } ${pathname === "/proprietarios" ? styles.activeButton : ""}`}
           >
             <Image
               className={styles.menuIcon}
@@ -44,9 +49,8 @@ export default function NavBar() {
               alt="Adicionar Usuário"
             />
             <span
-              className={`${styles.menuText} ${
-                aberto ? "" : styles.menuTextFechado
-              }`}
+              className={`${styles.menuText} ${aberto ? "" : styles.menuTextFechado
+                }`}
             >
               Proprietários
             </span>
@@ -56,9 +60,8 @@ export default function NavBar() {
         {/* relatorios */}
         <Link title="Relatórios" href={"/relatorios"}>
           <div
-            className={`${styles.buttonDiv} ${
-              aberto ? "" : styles.buttonDivFechado
-            }`}
+            className={`${styles.buttonDiv} ${aberto ? "" : styles.buttonDivFechado
+              }`}
           >
             <Image
               className={styles.menuIcon}
@@ -68,9 +71,8 @@ export default function NavBar() {
               alt="Relatórios"
             />
             <span
-              className={`${styles.menuText} ${
-                aberto ? "" : styles.menuTextFechado
-              }`}
+              className={`${styles.menuText} ${aberto ? "" : styles.menuTextFechado
+                }`}
             >
               Relatórios
             </span>
@@ -79,9 +81,8 @@ export default function NavBar() {
         {/* rotas */}
         <Link title="Rotas" href={"/rotas"}>
           <div
-            className={`${styles.buttonDiv} ${
-              aberto ? "" : styles.buttonDivFechado
-            }`}
+            className={`${styles.buttonDiv} ${aberto ? "" : styles.buttonDivFechado
+              }`}
           >
             <Image
               className={styles.menuIcon}
@@ -91,9 +92,8 @@ export default function NavBar() {
               alt="Rotas"
             />
             <span
-              className={`${styles.menuText} ${
-                aberto ? "" : styles.menuTextFechado
-              }`}
+              className={`${styles.menuText} ${aberto ? "" : styles.menuTextFechado
+                }`}
             >
               Rotas
             </span>
@@ -102,9 +102,8 @@ export default function NavBar() {
         {/* usuarios */}
         <Link title="Usuários" href={"/usuarios"}>
           <div
-            className={`${styles.buttonDiv} ${
-              aberto ? "" : styles.buttonDivFechado
-            }`}
+            className={`${styles.buttonDiv} ${aberto ? "" : styles.buttonDivFechado
+              }`}
           >
             <Image
               className={styles.menuIcon}
@@ -114,9 +113,8 @@ export default function NavBar() {
               alt="Usuários"
             />
             <span
-              className={`${styles.menuText} ${
-                aberto ? "" : styles.menuTextFechado
-              }`}
+              className={`${styles.menuText} ${aberto ? "" : styles.menuTextFechado
+                }`}
             >
               Usuários
             </span>
@@ -126,9 +124,8 @@ export default function NavBar() {
       {/* sair */}
       <Link title="Sair" href={"/"}>
         <div
-          className={`${styles.buttonDiv} ${styles.logOutButton} ${
-            aberto ? "" : styles.buttonDivFechado
-          }`}
+          className={`${styles.buttonDiv} ${styles.logOutButton} ${aberto ? "" : styles.buttonDivFechado
+            }`}
         >
           <Image
             className={styles.menuIcon}
@@ -138,9 +135,8 @@ export default function NavBar() {
             alt="Sair"
           />
           <span
-            className={`${styles.menuText} ${
-              aberto ? "" : styles.menuTextFechado
-            }`}
+            className={`${styles.menuText} ${aberto ? "" : styles.menuTextFechado
+              }`}
           >
             Sair
           </span>
@@ -148,9 +144,8 @@ export default function NavBar() {
       </Link>
       {/* hover */}
       <div
-        className={`${styles.verticalLine} ${
-          aberto ? styles.verticalLineAberto : ""
-        }`}
+        className={`${styles.verticalLine} ${aberto ? styles.verticalLineAberto : ""
+          }`}
         onClick={() => setAberto(!aberto)}
       >
         <div className={styles.floatingButton}>

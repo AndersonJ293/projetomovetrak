@@ -1,17 +1,18 @@
 .container {
-    width: 140px;
-    height: 35px;
+    width: 10%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .title {
     font-family: var(--textFont);
-    font-size: 12px;
+    font-size: var(--mediumFontSize);
 }
 
 .subtitle {
     font-family: var(--titleFont);
-    font-size: 12px;
-    font-weight: 700;
+    font-size: var(--smallFontSize);
+    font-weight: var(--boldFontWeight);
 }

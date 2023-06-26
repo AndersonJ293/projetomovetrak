@@ -9,6 +9,22 @@ export default function Lembretes() {
           <span className={styles.name}>CES5H07</span>
           <span className={styles.text}>IPVA Atrasado</span>
         </div>
+        <div className={styles.line}>
+          <span className={styles.name}>CES5H07</span>
+          <span className={styles.text}>IPVA Atrasado</span>
+        </div>
+        <div className={styles.line}>
+          <span className={styles.name}>CES5H07</span>
+          <span className={styles.text}>IPVA Atrasado</span>
+        </div>
+        <div className={styles.line}>
+          <span className={styles.name}>CES5H07</span>
+          <span className={styles.text}>IPVA Atrasado</span>
+        </div>
+        <div className={styles.line}>
+          <span className={styles.name}>CES5H07</span>
+          <span className={styles.text}>IPVA Atrasado</span>
+        </div>
       </div>
     </div>
   );

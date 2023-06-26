@@ -12,7 +12,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 90%;
+	width: 95%;
+	max-width: 1920px;
 }
 
 .screen {
@@ -27,23 +28,25 @@
 .content {
 	display: flex;
 	justify-content: space-evenly;
-	width: 90%;
+	width: 95%;
+	height: 95%;
+	max-width: 1920px;
 }
 
 .cardsDiv {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	align-items: center;
-	width: 70%;
+	align-items: flex-end;
+	width: 80%;
 }
 
 .cardsRow {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 250px;
-	width: 800px;
+	height: 48%;
+	width: 100%;
 }
 
 .totalColumn {
@@ -52,4 +55,12 @@
 	justify-content: space-between;
 	align-items: center;
 	height: 100%;
+}
+
+.rotasDiv {
+	height: 100%;
+	width: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

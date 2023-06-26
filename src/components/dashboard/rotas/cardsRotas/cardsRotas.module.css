@@ -1,6 +1,6 @@
 .container {
     width: 95%;
-    height: 50px;
+    height: 10%;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
@@ -12,10 +12,6 @@
     margin-bottom: 15px;
 }
 
-.truckIcon {
-    width: 10%;
-}
-
 .columnText {
     width: 85%;
     display: flex;
@@ -24,8 +20,8 @@
 }
 
 .carPlate {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: var(--defaultFontSize);
+    font-weight: var(--boldFontWeight);
 }
 
 .rowText {
@@ -35,13 +31,13 @@
 }
 
 .routeText {
-    font-size: 10px;
-    font-weight: 500;
+    font-size: var(--smallFontSize);
+    font-weight: var(--mediumFontWeight);
 }
 
 .statusIndicator {
     background-color: var(--green);
-    width: 5%;
+    width: 10%;
     aspect-ratio: 1/1;
     border-radius: 50%;
 }

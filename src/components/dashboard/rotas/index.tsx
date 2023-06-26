@@ -18,7 +18,9 @@ export default function RotasDashboard() {
         />
       </div>
       <div className={styles.tableContainer}>
-        <CardsRotas></CardsRotas>
+        <CardsRotas />
+        <CardsRotas />
+        <CardsRotas />
       </div>
     </div>
   );

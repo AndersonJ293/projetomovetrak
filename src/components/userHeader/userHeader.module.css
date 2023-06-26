@@ -2,8 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 290px;
-    height: 50px;
+    width: 20%;
+    height: 100%;
 }
 
 .left {
@@ -28,20 +28,20 @@
 
 .nome {
     font-family: var(--titleFont);
-    font-size: 16px;
-    font-weight: 700;
+    font-size: var(--defaultFontSize);
+    font-weight: var(--boldFontWeight);
 }
 
 .email {
     font-family: var(--textFont);
-    font-size: 12px;
-    font-weight: 600;
+    font-size: var(--mediumFontSize);
+    font-weight: var(--boldFontWeight);
     color: #0004;
 }
 
 .iconDiv {
-    width: 40px;
-    height: 40px;
+    height: 100%;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     display: flex;
     align-items: center;

@@ -14,12 +14,9 @@ body {
 
 body {
 	color: rgb(var(--foreground-rgb));
-	background: linear-gradient(
-			to bottom,
+	background: linear-gradient(to bottom,
 			transparent,
-			rgb(var(--background-end-rgb))
-		)
-		rgb(var(--background-start-rgb));
+			rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 a {
@@ -39,4 +36,11 @@ a {
 	--textFont: 'Montserrat', sans-serif;
 	--maxWidth: 1200px;
 	--maxHeight: 100vh;
+	--titleFontSize: 2.5vh;
+	--defaultFontSize: 2vh;
+	--mediumFontSize: 1.8vh;
+	--smallFontSize: 1.5vh;
+	--boldFontWeight: 600;
+	--mediumFontWeight: 500;
+	--regularFontWeight: 400;
 }

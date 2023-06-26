@@ -20,6 +20,7 @@
 .buttonDiv {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	height: 50px;
 	width: 200px;
 	border-radius: 10px;
@@ -43,6 +44,12 @@
 
 .buttonDiv:hover {
 	background-color: #d1d0d0;
+}
+
+.activeButton {
+	border-radius: 10px 10px 5px 5px;
+	border-bottom: 3px solid red;
+	background-color: #d1d0d0
 }
 
 .verticalLine {

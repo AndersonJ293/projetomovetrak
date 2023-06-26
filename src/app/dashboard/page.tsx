@@ -33,7 +33,9 @@ export default function DashBoard() {
               </div>
               <RegistrosDashboard />
             </div>
-            <RotasDashboard />
+            <div className={styles.rotasDiv}>
+              <RotasDashboard />
+            </div>
           </div>
         </div>
       </div>
