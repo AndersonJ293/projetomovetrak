@@ -1,0 +1,151 @@
+.container {
+    width: 90vw;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.headerContainer {
+    width: 100%;
+    height: 10%;
+    background-color: var(--gray);
+    border-radius: 10px;
+    box-shadow: var(--dropShadow);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.dataContainer {
+    width: 100%;
+    height: 89%;
+    background-color: var(--gray);
+    border-radius: 10px;
+    box-shadow: var(--dropShadow);
+    padding: 10px 15px;
+}
+
+.headerTitle {
+    width: 70%;
+    font-family: var(--titleFont);
+    font-size: var(--titleFontSize);
+    font-weight: var(--boldFontWeight);
+}
+
+.headerButtons {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.searchBar{
+    background-color: #ffffff;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-self: flex-end;
+    padding: 0 15px;
+    margin-right: 20px;
+}
+
+.searchBar input {
+    border: none;
+    outline: none;
+    width: 100px;
+    height: 20px;
+    padding-left: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    color: var(--darkGray);
+}
+
+.registerButton{
+    height: 30px;
+    width: 124px;
+    border-radius: 10px;
+    background-color: var(--red);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerButton span{
+    color: #ffffff;
+    font-size: var(--defaultFontSize);
+    font-weight: var(--boldFontWeight);
+}
+
+.dataTable {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dataHeader {
+    font-family: var(--titleFont);
+    font-size: var(--defaultFontSize);
+    font-weight: var(--boldFontWeight);
+    padding: 5px 15px;
+}
+
+.dataHeader > tr{
+    display: flex;
+}
+
+.dataHeader > tr > th{
+    width: 20%;
+    text-align: start;
+    cursor: pointer;
+}
+
+.dataBody {
+    font-family: var(--textFont);
+    font-size: var(--defaultFontSize);
+    font-weight: var(--mediumFontWeight);
+    padding: 20px 15px;
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 12px 0;
+}
+
+.dataBody > td {
+    width: 20%;
+}
+
+.pageSelector {
+    height: 5%;
+    font-family: var(--textFont);
+    font-size: var(--mediumFontSize);
+    font-weight: var(--boldFontWeight);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.changePage {
+    font-size: var(--defaultFontSize);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+    outline: none;
+    border: none;
+}
+
+.changePage:hover {
+    background-color: #e1e1ea;
+}
