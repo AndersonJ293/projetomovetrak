@@ -102,10 +102,10 @@ export default function NavBar() {
           </div>
         </Link>
         {/* usuarios */}
-        <Link title="Usuários" href={"/usuarios"}>
+        <Link title="Usuários" href={"/users"}>
           <div
             className={`${styles.buttonDiv} ${aberto ? "" : styles.buttonDivFechado
-              }`}
+              } ${pathname === "/users" ? styles.activeButton : ""} `}
           >
             <Image
               className={styles.menuIcon}

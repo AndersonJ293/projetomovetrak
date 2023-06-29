@@ -7,7 +7,7 @@ import { Component, useState, useEffect } from "react";
 
 interface TableComponentProps {
   headerTitle: string;
-  tableColumns?: any;
+  tableColumns: any;
   actions?: Component;
 }
 
