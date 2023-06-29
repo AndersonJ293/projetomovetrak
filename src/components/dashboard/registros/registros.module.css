@@ -63,7 +63,7 @@
 
 .subHeader>p {
     font-family: var(--textFont);
-    font-size: var(--mediumFontSize);
+    font-size: var(--defaultFontSize);
     font-weight: var(--boldFontWeight);
     text-align: center;
     justify-content: center;
@@ -89,7 +89,7 @@
 
 .entry>p {
     font-family: var(--textFont);
-    font-size: var(--smallFontSize);
+    font-size: var(--mediumFontSize);
     font-weight: var(--regularFontWeight);
     text-align: center;
     justify-content: center;
