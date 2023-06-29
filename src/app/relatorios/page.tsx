@@ -1,9 +1,9 @@
 import NavBar from "@/components/navbar";
-import styles from "./proprietarios.module.css";
+import styles from "./relatorios.module.css";
 import HeaderLine from "@/components/headerLine";
 import TableComponent from "@/components/tableComponent";
 
-export default function Proprietarios() {
+export default function Relatorios() {
   return (
     <>
       <NavBar />
@@ -12,12 +12,12 @@ export default function Proprietarios() {
         <HeaderLine />
         <div className={styles.screen}>
           <TableComponent
-            headerTitle="Proprietários"
+            headerTitle="Relatórios"
             tableColumns={[
               { title: "Nome" },
-              { title: "CPF" },
-              { title: "Escola" },
-              { title: "Situação" },
+              { title: "Data" },
+              { title: "Tipo" },
+              { title: "Responsável" },
             ]}
           />
         </div>
