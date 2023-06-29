@@ -28,13 +28,13 @@
 
 .nome {
     font-family: var(--titleFont);
-    font-size: var(--defaultFontSize);
+    font-size: var(--mediumFontSize);
     font-weight: var(--boldFontWeight);
 }
 
 .email {
     font-family: var(--textFont);
-    font-size: var(--mediumFontSize);
+    font-size: var(--smallFontSize);
     font-weight: var(--boldFontWeight);
     color: #0004;
 }

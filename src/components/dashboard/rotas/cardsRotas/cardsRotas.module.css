@@ -20,7 +20,7 @@
 }
 
 .carPlate {
-    font-size: var(--defaultFontSize);
+    font-size: var(--mediumFontSize);
     font-weight: var(--boldFontWeight);
 }
 
@@ -32,7 +32,7 @@
 
 .routeText {
     font-size: var(--smallFontSize);
-    font-weight: var(--mediumFontWeight);
+    font-weight: var(--regularFontWeight);
 }
 
 .statusIndicator {
