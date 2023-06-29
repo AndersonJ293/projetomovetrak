@@ -3,14 +3,19 @@ import Image from "next/image";
 import ThreeDots from "../../assets/icons/threeDots.png";
 import ProfilePlaceholder from "../../assets/profilePlaceholder.jpg";
 
-export default function UserHeader() {
+interface UserHeaderProps {
+    nome: string,
+    login: string
+}
+
+export default function UserHeader(props: UserHeaderProps) {
     return (
         <div className={styles.container}>
             <div className={styles.left}>
                 <Image className={styles.foto} width={45} height={45} alt="" src={ProfilePlaceholder} />
                 <div className={styles.info}>
-                    <h1 className={styles.nome}>Victor</h1>
-                    <h2 className={styles.email}>victor.castro@movetrak</h2>
+                    <h1 className={styles.nome}>{props.nome}</h1>
+                    <h2 className={styles.email}>{props.login}</h2>
                 </div>
             </div>
             <div className={styles.iconDiv}>

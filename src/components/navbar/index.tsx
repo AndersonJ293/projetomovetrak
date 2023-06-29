@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Image from "next/image";
 import styles from "./navbar.module.css";
 import Logo from "../../assets/logo.png";
@@ -12,9 +12,11 @@ import Route from "../../assets/icons/route.png";
 import Arrow from "../../assets/icons/arrow.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { UserContext } from "@/contexts/userContext";
 
 export default function NavBar() {
   const [aberto, setAberto] = useState(false);
+  const { handleLogOut } = useContext(UserContext);
   const pathname = usePathname();
 
   return (
@@ -122,26 +124,25 @@ export default function NavBar() {
         </Link>
       </div>
       {/* sair */}
-      <Link title="Sair" href={"/"}>
-        <div
-          className={`${styles.buttonDiv} ${styles.logOutButton} ${aberto ? "" : styles.buttonDivFechado
+      <div
+        onClick={() => handleLogOut()}
+        className={`${styles.buttonDiv} ${styles.logOutButton} ${aberto ? "" : styles.buttonDivFechado
+          }`}
+      >
+        <Image
+          className={styles.menuIcon}
+          height={25}
+          width={25}
+          src={Exit}
+          alt="Sair"
+        />
+        <span
+          className={`${styles.menuText} ${aberto ? "" : styles.menuTextFechado
             }`}
         >
-          <Image
-            className={styles.menuIcon}
-            height={25}
-            width={25}
-            src={Exit}
-            alt="Sair"
-          />
-          <span
-            className={`${styles.menuText} ${aberto ? "" : styles.menuTextFechado
-              }`}
-          >
-            Sair
-          </span>
-        </div>
-      </Link>
+          Sair
+        </span>
+      </div>
       {/* hover */}
       <div
         className={`${styles.verticalLine} ${aberto ? styles.verticalLineAberto : ""
