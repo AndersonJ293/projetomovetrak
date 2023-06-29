@@ -3,7 +3,7 @@ import styles from "./tableComponent.module.css";
 import Image from "next/image";
 
 import searchIcon from "@/assets/icons/search.png";
-import { Component, useState } from "react";
+import { Component, useState, useEffect } from "react";
 import { Interface } from "readline";
 
 interface TableComponentProps {
@@ -96,26 +96,37 @@ export default function TableComponent(props: TableComponentProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
-  // Filtro de dados da pesquisa
-  const filteredData = data.filter((item: any) => {
-    const { _, nome, tipo, responsavel } = item;
+  // Estado para armazenar os dados filtrados
+  const [filteredData, setFilteredData] = useState([]);
 
-    // Verifica se o termo buscado corresponde aos dados
-    return (
-      nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      tipo.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      responsavel.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  });
-
-  // Estado para armazenar a configuracao de ordenacao
+  // Estado para armazenar a configuração de ordenação
   const [sortConfig, setSortConfig] = useState({ key: null, direction: "asc" });
 
-  // Funcao para ordenar os dados com base na coluna selecionada
+  // Efeito para atualizar os dados filtrados quando ocorrem alterações em data e searchTerm
+  useEffect(() => {
+    let updatedData: any = data;
+
+    if (searchTerm) {
+      updatedData = data.filter((item: any) => {
+        const { _, nome, tipo, responsavel } = item;
+
+        // Verifica se o termo buscado corresponde aos dados
+        return (
+          nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          tipo.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          responsavel.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      });
+    }
+
+    setFilteredData(updatedData);
+  }, [data, searchTerm]);
+
+  // Função para ordenar os dados com base na coluna selecionada
   const sortData = (key: any) => {
     let direction = "asc";
 
-    // Verifica se a coluna selecionada eh a mesma e inverte a direcao
+    // Verifica se a coluna selecionada é a mesma e inverte a direção
     if (
       sortConfig &&
       sortConfig.key === key &&
@@ -124,7 +135,7 @@ export default function TableComponent(props: TableComponentProps) {
       direction = "desc";
     }
 
-    // Ordena os dados com base na coluna selecionada
+    // Ordena os dados filtrados com base na coluna selecionada
     const sortedData = [...filteredData].sort((a: any, b: any) => {
       if (key === "data") {
         // Converte as datas em objetos Date e compara usando getTime()
@@ -141,13 +152,13 @@ export default function TableComponent(props: TableComponentProps) {
       }
     });
 
-    // Inverte as colunas se a direcao for descendente
+    // Inverte as colunas se a direção for descendente
     if (direction === "desc") {
       sortedData.reverse();
     }
 
-    // Atualiza os dados e a configuracao de ordenacao
-    setData(sortedData);
+    // Atualiza os dados filtrados e a configuração de ordenação
+    setFilteredData(sortedData);
     setSortConfig({ key, direction });
   };
 
@@ -240,31 +251,12 @@ export default function TableComponent(props: TableComponentProps) {
             {/* Cabeçalhos da tabela com funcionalidade de ordenação */}
             <tr>
               {renderTable(props.tableColumns)}
-              {/* <th onClick={() => sortData("nome")}>
-                Nome{" "}
-                {sortConfig.key === "nome" &&
-                  (sortConfig.direction === "asc" ? "▲" : "▼")}
-              </th>
-              <th onClick={() => sortData("data")}>
-                Data{" "}
-                {sortConfig.key === "data" &&
-                  (sortConfig.direction === "asc" ? "▲" : "▼")}
-              </th>
-              <th onClick={() => sortData("tipo")}>
-                Tipo{" "}
-                {sortConfig.key === "tipo" &&
-                  (sortConfig.direction === "asc" ? "▲" : "▼")}
-              </th>
-              <th onClick={() => sortData("responsavel")}>
-                Responsável{" "}
-                {sortConfig.key === "responsavel" &&
-                  (sortConfig.direction === "asc" ? "▲" : "▼")}
-              </th> */}
+
               <th>Ações</th>
             </tr>
           </thead>
           <tbody>
-            {currentItems.map((item) => (
+            {currentItems.map((item: any) => (
               <tr className={styles.dataBody} key={item.id}>
                 <td>{item.nome}</td>
                 <td>{formatDate(item.data)}</td>
