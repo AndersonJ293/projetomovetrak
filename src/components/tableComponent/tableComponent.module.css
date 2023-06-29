@@ -1,6 +1,7 @@
 .container {
-    width: 90vw;
-    height: 600px;
+    width: 95%;
+    max-width: 1920px;
+    height: 95%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -39,7 +40,7 @@
     justify-content: flex-end;
 }
 
-.searchBar{
+.searchBar {
     background-color: #ffffff;
     width: 150px;
     height: 30px;
@@ -57,13 +58,14 @@
     width: 100px;
     height: 20px;
     padding-left: 5px;
-    font-size: 14px;
-    font-weight: 500;
+    font-family: var(--textFont);
+    font-size: var(--smallFontSize);
+    font-weight: var(--regularFontWeight);
     letter-spacing: 0em;
     color: var(--darkGray);
 }
 
-.registerButton{
+.registerButton {
     height: 30px;
     width: 124px;
     border-radius: 10px;
@@ -74,9 +76,10 @@
     align-items: center;
 }
 
-.registerButton span{
+.registerButton span {
     color: #ffffff;
-    font-size: var(--defaultFontSize);
+    font-family: var(--titleFont);
+    font-size: var(--mediumFontSize);
     font-weight: var(--boldFontWeight);
 }
 
@@ -94,29 +97,40 @@
     padding: 5px 15px;
 }
 
-.dataHeader > tr{
+.dataHeader>tr {
     display: flex;
 }
 
-.dataHeader > tr > th{
+.dataHeader>tr>th {
     width: 20%;
     text-align: start;
     cursor: pointer;
+}
+
+.tbody {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .dataBody {
     font-family: var(--textFont);
     font-size: var(--defaultFontSize);
     font-weight: var(--mediumFontWeight);
-    padding: 20px 15px;
+    width: 100%;
+    height: 15%;
+    padding: 0px 15px;
     display: flex;
     background-color: #fff;
     border-radius: 10px;
-    margin: 12px 0;
+    margin: 5px 0px;
 }
 
-.dataBody > td {
+.dataBody>td {
     width: 20%;
+    display: flex;
+    align-items: center;
 }
 
 .pageSelector {
