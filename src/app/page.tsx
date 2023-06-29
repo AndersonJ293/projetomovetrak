@@ -18,8 +18,6 @@ export default function Home() {
     await handleLogin(loginInput, passwordInput);
   }
 
-  console.log(login)
-
   return (
     <>
       {login ?
