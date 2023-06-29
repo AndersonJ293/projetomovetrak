@@ -4,7 +4,6 @@ import Image from "next/image";
 
 import searchIcon from "@/assets/icons/search.png";
 import { Component, useState, useEffect } from "react";
-import { Interface } from "readline";
 
 interface TableComponentProps {
   headerTitle: string;
