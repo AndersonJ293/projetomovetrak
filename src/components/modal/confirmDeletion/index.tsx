@@ -2,11 +2,18 @@ import styles from "./modal.module.css";
 import Image from "next/image";
 import svg from "../../../assets/deletesvg.svg";
 
-const ConfirmDeletion = ({ title, description, onClose, onDelete }) => {
+interface ConfirmDeletion {
+  title: string;
+  description: string;
+  onClose: any;
+  onDelete: any;
+}
+
+const ConfirmDeletion = (props: ConfirmDeletion) => {
   return (
     <div className={styles.modal}>
       <div className={styles.modalContent}>
-        <h2>{title}</h2>
+        <h2>{props.title}</h2>
         <Image
           className={styles.svg}
           width={360}
@@ -14,12 +21,12 @@ const ConfirmDeletion = ({ title, description, onClose, onDelete }) => {
           src={svg}
           alt="Foto "
         />
-        <p>{description}</p>
+        <p>{props.description}</p>
         <div className={styles.modalButtons}>
-          <button className={styles.cancelButton} onClick={onClose}>
+          <button className={styles.cancelButton} onClick={props.onClose}>
             Cancelar
           </button>
-          <button className={styles.deleteButton} onClick={onDelete}>
+          <button className={styles.deleteButton} onClick={props.onDelete}>
             Apagar
           </button>
         </div>
