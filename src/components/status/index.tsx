@@ -13,6 +13,7 @@ const Status = (props: Status) => {
     color: props.active ? "#1EB106" : "#FF0101",
     display: "flex",
     alignItems: "center",
+    justifyContent: "center",
     padding: "2px 8px",
     borderRadius: "16px",
   };
