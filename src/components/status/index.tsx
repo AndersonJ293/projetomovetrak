@@ -1,4 +1,7 @@
 import React from "react";
+import Image from "next/image";
+import iconAct from "../../../public/icons/noteverde.svg";
+import iconIna from "../../../public/icons/notevermelho.svg";
 
 interface Status {
   active: boolean;
@@ -8,7 +11,7 @@ const Status = (props: Status) => {
   const statusStyle = {
     backgroundColor: props.active ? "#E9F8E7" : "#FFE6E6",
     color: props.active ? "#1EB106" : "#FF0101",
-    display: "inline-flex",
+    display: "flex",
     alignItems: "center",
     padding: "2px 8px",
     borderRadius: "16px",
@@ -16,31 +19,18 @@ const Status = (props: Status) => {
 
   return (
     <div style={statusStyle}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        width="20"
-        height="20"
-        style={{ marginRight: "4px" }}
-      >
+      <div style={{ marginRight: "4px" }}>
         {props.active ? (
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 13l4 4L19 7"
-          />
+          <Image src={iconAct} alt={"icone de ativo"} width={18} height={18} />
         ) : (
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M6 18L18 6M6 6l12 12"
+          <Image
+            src={iconIna}
+            alt={"icone de inativo"}
+            width={18}
+            height={18}
           />
         )}
-      </svg>
+      </div>
       {props.active ? "Ativo" : "Inativo"}
     </div>
   );
