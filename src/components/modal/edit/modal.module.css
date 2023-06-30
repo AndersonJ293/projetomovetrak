@@ -1,0 +1,105 @@
+.modal {
+    width: 80vw;
+    height: 80vh;
+    background-color: #F8F8FA;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: var(--boxShadow);
+  }
+  
+  .modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .closeButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .listItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    
+  }
+  
+  .listItemContent {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .icon {
+    width: 30px;
+    height: 30px;
+    background-color: #eaeaea;
+    margin-right: 10px;
+  }
+  
+  .itemName {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .itemSubtitle {
+    font-weight: 500;
+    color: #747E9F;
+    font-size: 12px;
+  }
+  
+  .time {
+    margin-left: auto;
+  }
+  
+  .subtitle {
+    margin-top: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .otherList {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .otherListTitle {
+    font-weight: 500;
+    color: #231F20;
+    font-size: 12px;
+  }
+
+  .otherListSubtitle{
+    color: #747E9F;
+    font-size: 10px;
+    font-weight: 500;
+  }
+  
+  .input {
+    background-color: #FFFFFF;
+    width: 100%;
+    padding: 8px;
+    border: 0px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    color: #fff;
+    border: none;
+    padding: 12px 16px;
+    background-color: var(--red);
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: var(--red);
+  }
+  
