@@ -1,7 +1,7 @@
 import styles from "./userHeader.module.css";
 import Image from "next/image";
 import ThreeDots from "../../../public/icons/more.svg";
-import ProfilePlaceholder from "../../assets/profilePlaceholder.jpg";
+import ProfilePlaceholder from "../../../public/icons/person.svg";
 
 interface UserHeaderProps {
   nome: string;
