@@ -1,8 +1,8 @@
-// Modal.js
-
+import Image from "next/image";
+import svg from "../../../assets/icons/note.svg";
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./Modal.module.css";
+import styles from "./modal.module.css";
 
 const Modal = ({
   title,
@@ -10,7 +10,8 @@ const Modal = ({
   listItems,
   subtitle,
   otherLists,
-  inputPlaceholder,
+  label,
+  value,
   buttonText,
 }) => {
   return (
@@ -21,27 +22,45 @@ const Modal = ({
           Fechar
         </button>
       </div>
-      <div className={styles.listItem}>
-        {listItems.map((item, index) => (
-          <div key={index} className={styles.listItemContent}>
-            <div className={styles.icon}>{item.icon}</div>
-            <div>
-              <p className={styles.itemName}>{item.name}</p>
-              <p className={styles.itemSubtitle}>{item.subtitle}</p>
+      <div className={styles.lists}>
+        <div className={styles.listItem}>
+          {listItems.map((item, index) => (
+            <div key={index} className={styles.listItemContent}>
+              <div className={styles.iconTwo}>
+                <Image
+                  src={svg}
+                  width={18}
+                  height={18}
+                  alt={"icone nota"}
+                  className={styles.iconSvg}
+                ></Image>
+              </div>
+              <div>
+                <p className={styles.itemName}>{item.name}</p>
+                <p className={styles.itemSubtitle}>{item.subtitle}</p>
+              </div>
             </div>
+          ))}
+          <div className={styles.time}>23/06/23 ás 16:15</div>
+        </div>
+        <div className={styles.subtitle}>{subtitle}</div>
+        {otherLists.map((list, index) => (
+          <div key={index} className={styles.otherList}>
+            <h3 className={styles.otherListTitle}>{list.title}</h3>
+            <p className={styles.otherListSubtitle}>{list.subtitle}</p>
           </div>
         ))}
-        <div className={styles.time}>Hora</div>
       </div>
-      <div className={styles.subtitle}>{subtitle}</div>
-      {otherLists.map((list, index) => (
-        <div key={index} className={styles.otherList}>
-          <h3 className={styles.otherListTitle}>{list.title}</h3>
-          <p className={styles.otherListSubtitle}>{list.subtitle}</p>
-        </div>
-      ))}
-      <input className={styles.input} placeholder={inputPlaceholder} />
-      <button className={styles.button}>{buttonText}</button>
+      <label>{label}</label>
+      <input className={styles.input} value={value} />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+        }}
+      >
+        <button className={styles.button}>{buttonText}</button>
+      </div>
     </div>
   );
 };
@@ -51,7 +70,6 @@ Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
   listItems: PropTypes.arrayOf(
     PropTypes.shape({
-      icon: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       subtitle: PropTypes.string.isRequired,
     })
@@ -63,7 +81,7 @@ Modal.propTypes = {
       subtitle: PropTypes.string.isRequired,
     })
   ).isRequired,
-  inputPlaceholder: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
 };
 

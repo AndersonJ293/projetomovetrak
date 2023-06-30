@@ -43,10 +43,11 @@
   .modal_content input[type="email"] {
     background-color: #FFFFFF;
     width: 100%;
-    padding: 8px;
+    padding: 8px 16px;
     border: 0px;
     border-radius: 12px;
     margin-bottom: 10px;
+    margin-top: 3px;
   }
   
   .modal_content div {
