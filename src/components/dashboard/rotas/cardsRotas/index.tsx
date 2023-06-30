@@ -1,7 +1,7 @@
 import styles from "./cardsRotas.module.css";
 import Image from "next/image";
 
-import truckIcon from "@/assets/icons/truck.png";
+import truckIcon from "../../../../../public/icons/car.svg";
 
 export default function CardsRotas() {
   return (
