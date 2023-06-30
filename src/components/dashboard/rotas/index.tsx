@@ -1,7 +1,7 @@
 import styles from "./rotas.module.css";
 import Image from "next/image";
 
-import reloadIcon from "@/assets/icons/reload.png";
+import reloadIcon from "../../../../public/icons/reload.svg";
 import CardsRotas from "./cardsRotas";
 
 export default function RotasDashboard() {

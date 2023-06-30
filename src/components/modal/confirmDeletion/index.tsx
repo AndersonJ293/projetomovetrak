@@ -1,6 +1,6 @@
 import styles from "./modal.module.css";
 import Image from "next/image";
-import svg from "../../../assets/deletesvg.svg";
+import svg from "../../../../public/deletesvg.svg";
 
 interface ConfirmDeletion {
   title: string;
