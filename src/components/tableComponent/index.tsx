@@ -254,7 +254,7 @@ export default function TableComponent(props: TableComponentProps) {
               <th>Ações</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className={styles.tbody}>
             {currentItems.map((item: any) => (
               <tr className={styles.dataBody} key={item.id}>
                 <td>{item.nome}</td>

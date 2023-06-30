@@ -10,6 +10,7 @@ import File from "../../assets/icons/file.png";
 import Group from "../../assets/icons/group.png";
 import Route from "../../assets/icons/route.png";
 import Arrow from "../../assets/icons/arrow.png";
+import MapPin from "@/assets/icons/mapPin.svg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { UserContext } from "@/contexts/userContext";
@@ -25,8 +26,10 @@ export default function NavBar() {
     >
       {/* logo  */}
       <Link title="DashBoard" href={"/dashboard"}>
-        <div className={`${styles.buttonDiv} ${aberto ? "" : styles.buttonDivFechado
-          } ${pathname === "/dashboard" ? styles.activeButton : ""} `}>
+        <div
+          className={`${styles.buttonDiv} ${aberto ? "" : styles.buttonDivFechado
+            } ${pathname === "/dashboard" ? styles.activeButton : ""} `}
+        >
           <Image
             className={styles.logo}
             width={0}
@@ -36,8 +39,31 @@ export default function NavBar() {
           />
         </div>
       </Link>
-      {/* proprietarios */}
+
       <div className={styles.buttonList}>
+        {/* rastreamento */}
+        <Link title="Rastreamento" href={"/rastreamento"}>
+          <div
+            className={`${styles.buttonDiv} ${aberto ? "" : styles.buttonDivFechado
+              } ${pathname === "/rastreamento" ? styles.activeButton : ""}`}
+          >
+            <Image
+              className={styles.menuIcon}
+              height={25}
+              width={25}
+              src={MapPin}
+              alt="Adicionar Usuário"
+            />
+            <span
+              className={`${styles.menuText} ${aberto ? "" : styles.menuTextFechado
+                }`}
+            >
+              Rastreamento
+            </span>
+          </div>
+        </Link>
+
+        {/* proprietarios */}
         <Link title="Proprietários" href={"/proprietarios"}>
           <div
             className={`${styles.buttonDiv} ${aberto ? "" : styles.buttonDivFechado
@@ -63,7 +89,7 @@ export default function NavBar() {
         <Link title="Relatórios" href={"/relatorios"}>
           <div
             className={`${styles.buttonDiv} ${aberto ? "" : styles.buttonDivFechado
-              }`}
+              } ${pathname === "/relatorios" ? styles.activeButton : ""}`}
           >
             <Image
               className={styles.menuIcon}
@@ -84,7 +110,7 @@ export default function NavBar() {
         <Link title="Rotas" href={"/rotas"}>
           <div
             className={`${styles.buttonDiv} ${aberto ? "" : styles.buttonDivFechado
-              }`}
+              } ${pathname === "/rotas" ? styles.activeButton : ""}`}
           >
             <Image
               className={styles.menuIcon}
