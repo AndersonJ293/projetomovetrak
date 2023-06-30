@@ -3,12 +3,12 @@ import styles from "./tableComponent.module.css";
 import Image from "next/image";
 
 import searchIcon from "../../../public/icons/search.svg";
-import { Component, useState, useEffect } from "react";
+import { Component, useState, useEffect, ReactElement } from "react";
 
 interface TableComponentProps {
   headerTitle: string;
   tableColumns: any;
-  actions?: Component;
+  actions?: ReactElement<any, any>;
 }
 
 export default function TableComponent(props: TableComponentProps) {
@@ -261,7 +261,7 @@ export default function TableComponent(props: TableComponentProps) {
                 <td>{formatDate(item.data)}</td>
                 <td>{item.tipo}</td>
                 <td>{item.responsavel}</td>
-                <td>{item.acao}</td>
+                <td>{props.actions}</td>
               </tr>
             ))}
           </tbody>

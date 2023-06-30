@@ -1,44 +1,45 @@
 .buttonList {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  
-  .secondaryButton {
-    background-color: var(--orange);
-    border: none;
-    padding: 0;
-    margin-right: 10px;
-    cursor: pointer;
-    padding: 10px 15px;
-    flex-shrink: 0;
-    border-radius: 10px;
-  }
-  
-  .primaryButton {
-    border-radius: 10px;
-    background-color: var(--orange);
-    border: none;
-    padding: 10px 15px;
-    margin-right: 10px;
-    color: #fff;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+}
 
-  .primaryButton:hover,
-  .secondaryButton:hover{
-    background-color: #fc6e02;
-  }
-  
-  .primaryButton span {
-    margin-right: 5px;
-  }
-  
-  .primaryButton img {
-    width: 20px;
-    height: 20px;
-  }
-  
+.secondaryButton {
+  background-color: var(--orange);
+  border: none;
+  padding: 0;
+  margin-right: 4px;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.primaryButton {
+  border-radius: 10px;
+  background-color: var(--orange);
+  border: none;
+  padding: 4px;
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  background-color: #fc6e02;
+}
+
+.primaryButton span {
+  margin-right: 5px;
+}
+
+.primaryButton img {
+  width: 18px;
+  height: 18px;
+}

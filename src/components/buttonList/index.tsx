@@ -23,9 +23,9 @@ const ButtonList = ({
         <Image
           src={iconButton}
           alt={"Butão"}
-          width={18}
-          height={18}
-          style={{ marginRight: "8px" }}
+          width={15}
+          height={15}
+          style={{ marginRight: "5px" }}
         />
         <span>{titleButton}</span>
       </button>
