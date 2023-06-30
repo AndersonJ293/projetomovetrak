@@ -14,8 +14,6 @@ const Status = (props: Status) => {
     borderRadius: "16px",
   };
 
-  const iconName = props.active ? "check" : "close";
-
   return (
     <div style={statusStyle}>
       <svg
