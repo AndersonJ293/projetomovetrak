@@ -2,7 +2,7 @@
 import styles from "./tableComponent.module.css";
 import Image from "next/image";
 
-import searchIcon from "@/assets/icons/search.png";
+import searchIcon from "../../../public/icons/search.svg";
 import { Component, useState, useEffect } from "react";
 
 interface TableComponentProps {

@@ -4,7 +4,7 @@
 	height: 100vh;
 	align-items: center;
 	justify-content: center;
-	background-image: url('../assets/background.jpg');
+	background-image: url('../../public/background.jpg');
 	background-position: center;
 	background-size: cover;
 	box-sizing: border-box;
