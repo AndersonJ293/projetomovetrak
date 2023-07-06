@@ -9,7 +9,6 @@ import exportIcon from "../../../public/icons/export.svg";
 import ButtonList from "@/components/buttonList";
 
 export default function Relatorios() {
-  
   const secondaryButtons = [
     {
       icon: edit,

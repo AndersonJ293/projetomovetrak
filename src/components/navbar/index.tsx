@@ -8,7 +8,7 @@ import AddUser from "../../../public/icons/addUser.svg";
 import Exit from "../../../public/icons/exit.svg";
 import File from "../../../public/icons/file.svg";
 import Group from "../../../public/icons/group.svg";
-import Route from "../../../public/icons/map.svg";
+import Route from "../../../public/icons/route.svg";
 import Arrow from "../../../public/icons/arrow.svg";
 import MapPin from "../../../public/icons/pin.svg";
 import Link from "next/link";

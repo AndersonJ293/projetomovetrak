@@ -6,33 +6,24 @@ interface RadioButtonProps {
   value: string;
   label: string;
   checked: boolean;
-  onChange: (value: string) => void;
+  onChange: Function;
 }
 
-const RadioButton: React.FC<RadioButtonProps> = ({
-  id,
-  value,
-  label,
-  checked,
-  onChange,
-}) => {
+export default function RadioButton(props: RadioButtonProps) {
   const handleChange = () => {
-    onChange(value);
+    props.onChange(props.value);
   };
-
   return (
-    <label htmlFor={id} className={styles.radioButton}>
+    <div className={styles.radioContainer}>
       <input
+        className={styles.input}
         type="radio"
-        id={id}
-        value={value}
-        checked={checked}
+        id={props.id}
+        value={props.value}
+        checked={props.checked}
         onChange={handleChange}
       />
-      <span className={styles.radioButton__custom}></span>
-      <span className={styles.labelText}>{label}</span>
-    </label>
+      <span className={styles.labelText}>{props.label}</span>
+    </div>
   );
-};
-
-export default RadioButton;
+}

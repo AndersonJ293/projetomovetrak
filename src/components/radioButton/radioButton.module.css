@@ -1,43 +1,44 @@
-.radioButton {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid green;
-  }
+.radioContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Removendo estilo padrao */
+.input {
+  appearance: none;
+}
   
-  .radioButton input[type='radio'] {
-    display: none;
-    border: 1px solid blue;
-  }
-  
-  .radioButton .radioButton__custom {
-    border: 1px solid red;
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 2px solid var(--red);
-    margin-right: 5px;
-    position: relative;
-  }
-  
-  .radioButton input[type='radio']:checked + .radioButton__custom::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: var(--red);
-    border: 1px solid brown;
-  }
-  
-  .labelText {
-    border: 1px solid purple;
-    font-size: 16px;
-  }
-  
+/* Personalizando unchecked radio input */
+.input {
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--red);
+  border-radius: 5px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: -5px;
+}
+
+.input::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  background-color: var(--red);
+  transform: scale(0);
+  transition: 0.3s transform ease-in-out;
+}
+
+.input:checked::before {
+  transform: scale(1);
+}
+
+.labelText {
+  font-family: var(--textFont);
+  font-size: var(--defaultFontSize);
+  font-weight: var(--mediumFontWeight);
+  margin-right: 10px;
+}

@@ -22,9 +22,9 @@ const UserRegistrationModal = () => {
   };
 
   return (
-    <div className={styles.modal}>
-      <div className={styles.modal_content}>
-        <h2>Cadastro de Usuário</h2>
+    <div className={styles.modalBackground}>
+      <div className={styles.modalContainer}>
+        <span className={styles.title}>Cadastrar Usuário</span>
         <form onSubmit={handleSubmit}>
           <label>
             <span>Nome:</span>
