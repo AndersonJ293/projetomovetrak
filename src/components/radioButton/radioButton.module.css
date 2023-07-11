@@ -19,7 +19,7 @@
   align-content: center;
   justify-content: center;
   cursor: pointer;
-  margin-right: -5px;
+  margin-right: 5px;
 }
 
 .input::before {

@@ -25,43 +25,47 @@ const UserRegistrationModal = () => {
     <div className={styles.modalBackground}>
       <div className={styles.modalContainer}>
         <span className={styles.title}>Cadastrar Usuário</span>
-        <form onSubmit={handleSubmit}>
-          <label>
-            <span>Nome:</span>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <label className={styles.inputLabel}>
+            <span className={styles.inputText}>Nome:</span>
             <input
+              className={styles.input}
               type="text"
               value={nome}
               onChange={(e) => setNome(e.target.value)}
               required
             />
           </label>
-          <label>
-            Login:
+          <label className={styles.inputLabel}>
+            <span className={styles.inputText}>Email:</span>
             <input
+              className={styles.input}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
+          <label className={styles.inputLabel}>
+            <span className={styles.inputText}>Login:</span>
+            <input
+              className={styles.input}
               type="text"
               value={login}
               onChange={(e) => setLogin(e.target.value)}
               required
             />
           </label>
-          <label>
-            Senha:
+          <label className={styles.inputLabel}>
+            <span className={styles.inputText}>Senha:</span>
             <input
+              className={styles.input}
               type="password"
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
               required
             />
           </label>
-          <label>
-            Email:
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </label>
-          <div>
+          <div className={styles.userTypeButton}>
             <RadioButton
               id="admin"
               value="admin"
@@ -84,7 +88,11 @@ const UserRegistrationModal = () => {
               onChange={handleOptionChange}
             />
           </div>
-          <button type="submit">Cadastrar</button>
+          <div className={styles.submitButtonContainer}>
+            <button className={styles.submitButton} type="submit">
+              Cadastrar
+            </button>
+          </div>
         </form>
       </div>
     </div>
