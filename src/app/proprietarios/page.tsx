@@ -1,3 +1,4 @@
+'use client';
 import NavBar from "@/components/navbar";
 import styles from "./proprietarios.module.css";
 import HeaderLine from "@/components/headerLine";

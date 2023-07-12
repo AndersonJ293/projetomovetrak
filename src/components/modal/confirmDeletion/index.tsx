@@ -5,8 +5,8 @@ import svg from "../../../../public/deletesvg.svg";
 interface ConfirmDeletion {
   title: string;
   description: string;
-  onClose: any;
-  onDelete: any;
+  onClose?: any;
+  onDelete?: any;
 }
 
 const ConfirmDeletion = (props: ConfirmDeletion) => {
@@ -14,14 +14,16 @@ const ConfirmDeletion = (props: ConfirmDeletion) => {
     <div className={styles.modal}>
       <div className={styles.modalContent}>
         <h2>{props.title}</h2>
-        <Image
-          className={styles.svg}
-          width={360}
-          height={266}
-          src={svg}
-          alt="Foto "
-        />
-        <p>{props.description}</p>
+        <div className={styles.centerDiv}>
+          <Image
+            className={styles.svg}
+            width={300}
+            height={200}
+            src={svg}
+            alt="Foto "
+          />
+          <p>{props.description}</p>
+        </div>
         <div className={styles.modalButtons}>
           <button className={styles.cancelButton} onClick={props.onClose}>
             Cancelar

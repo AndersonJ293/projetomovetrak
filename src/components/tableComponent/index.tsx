@@ -9,6 +9,7 @@ interface TableComponentProps {
   headerTitle: string;
   tableColumns: any;
   actions?: ReactElement<any, any>;
+  botaoCadastrar?: any;
 }
 
 export default function TableComponent(props: TableComponentProps) {
@@ -238,7 +239,7 @@ export default function TableComponent(props: TableComponentProps) {
             />
           </div>
 
-          <div className={styles.registerButton}>
+          <div className={styles.registerButton} onClick={props.botaoCadastrar}>
             <span>Cadastrar</span>
           </div>
         </div>
