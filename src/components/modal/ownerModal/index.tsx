@@ -21,6 +21,7 @@ export default function OwnerModal(props: OwnerModal) {
         </div>
 
         <div className={styles.contentContainer}>
+
           <span className={styles.subTitle}>Informações Proprietário</span>
           <div className={styles.inputsDiv}>
             <div className={styles.inputWrapper}>
@@ -44,6 +45,8 @@ export default function OwnerModal(props: OwnerModal) {
               <input className={styles.input} type="date" />
             </div>
           </div>
+
+          <div className={styles.divider}/>
 
           <span className={styles.subTitle}>Contato</span>
           <div className={styles.inputsDiv}>
@@ -76,11 +79,15 @@ export default function OwnerModal(props: OwnerModal) {
               <span className={styles.inputText}>Vínculo</span>
               <input className={styles.input} type="text" />
             </div>
-            <div className={styles.newContact}>
-              <span className={styles.newContactText}>Novo Contato</span>
+            <div className={styles.inputWrapper}>
+              <div className={styles.button}>
+                <span className={styles.newContactText}>Novo Contato</span>
+              </div>
             </div>
           </div>
-
+          
+          <div className={styles.divider}/>
+          
           <span className={styles.subTitle}>Endereço</span>
           <div className={styles.inputsDiv}>
             <div className={styles.inputWrapper}>
@@ -108,10 +115,11 @@ export default function OwnerModal(props: OwnerModal) {
               <input className={styles.input} type="text" />
             </div>
           </div>
+
         </div>
 
         <div className={styles.footer}>
-          <div className={styles.submitButton}>
+          <div className={styles.button}>
             <span>{props.title === "Editar" ? "Salvar" : "Cadastrar"}</span>
           </div>
         </div>
