@@ -21,7 +21,44 @@ export default function OwnerVehicle(props: ownerVehicle) {
         </div>
 
         <div className={styles.contentContainer}>
-          <div className={styles.vehicleDiv}></div>
+          <div className={styles.vehicleHeader}>
+            <div className={styles.cellDiv}>
+              <span>Placa</span>
+            </div>
+            <div className={styles.cellDiv}>
+              <span>Modelo</span>
+            </div>
+            <div className={styles.cellDiv}>
+              <span>Ano</span>
+            </div>
+            <div className={styles.cellDiv}>
+              <span>Cor</span>
+            </div>
+            <div className={styles.cellDiv}>
+              <span>Ações</span>
+            </div>
+          </div>
+
+          <div className={styles.vehicleDiv}>
+            <div className={styles.cellDiv}>
+              <span>Placa</span>
+            </div>
+            <div className={styles.cellDiv}>
+              <span>Modelo</span>
+            </div>
+            <div className={styles.cellDiv}>
+              <span>Ano</span>
+            </div>
+            <div className={styles.cellDiv}>
+              <span>Cor</span>
+            </div>
+            <div className={styles.cellDiv}>
+              <div className={styles.editButton}>Editar</div>
+            </div>
+          </div>
+          <div className={styles.addVehicleButton}>
+            <span>Adicionar Veículo</span>
+          </div>
         </div>
       </div>
     </div>
