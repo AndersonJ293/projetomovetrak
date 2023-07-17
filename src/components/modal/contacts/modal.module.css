@@ -1,73 +1,94 @@
+.modalBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modalBackground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--boxShadow);
+}
+
 .modal {
-    background-color: var(--modalBackground);
-    padding: 24px;
-    border-radius: 10px;
-    box-shadow: var(--boxShadow);
-  }
-  
-  
-  .modalHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
+  background-color: var(--gray);
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: var(--modalBoxShadow);
+}
 
-  .lists{
-    padding: 12px;
-    background-color: #fff;
-    margin-bottom: 20px;
-    border-radius: 10px;
-  }
-  
-  .closeButton {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.2s;
-    padding: 8px;
-    border-radius: 10px;
-  }
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
 
-  .closeButton:hover{
-    font-size: 15px;
-    background-color: #e1e1ea;
-  }
-  
-  .listItem {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .listItemContent {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-    margin-right: 120px;
-  }
+.title {
+  font-family: var(--titleFont);
+  font-size: var(--titleFontSize);
+  font-weight: var(--boldFontWeight);
+}
 
-  .iconTwo {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: var(--red);
-    margin-right: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 7px solid #FFE6E6;
-  }
-  
-  .itemName {
-    font-weight: bold;
-    font-size: 16px;
-  }
+.lists{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: var(--dropShadow);
+}
 
-  .itemSubtitle {
-    font-weight: 500;
-    color: var(--darkGray);
-    font-size: 14px;
-    margin-bottom: 2px;
-  }
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+.closeButton:hover {
+  background-color: #e1e1ea;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+}
+
+.listItemContent {
+  display: flex;
+  align-items: center;
+  margin-right: 120px;
+}
+
+.iconTwo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--red);
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 7px solid #FFE6E6;
+}
+
+.itemName {
+  font-family: var(--titleFont);
+  font-weight: var(--boldFontWeight);
+  font-size: var(--defaultFontSize);
+}
+
+.itemSubtitle {
+  font-weight: var(--mediumFontWeight);
+  color: var(--darkGray);
+  font-size: var(--smallFontSize);
+  margin-bottom: 2px;
+}
