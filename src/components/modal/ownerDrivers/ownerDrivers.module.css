@@ -1,0 +1,137 @@
+.modalBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modalBackground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContainer {
+  background-color: var(--gray);
+  /* padding: 30px; */
+  width: 60%;
+  height: 70%;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow-y: auto;
+  box-shadow: var(--modalBoxShadow);
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  width: 58.5%;
+  border-radius: 10px;
+  border-bottom: 1px solid #8f8e982c;
+  background-color: var(--gray);
+}
+
+.closeButton {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.closeButton:hover {
+  background-color: #e1e1ea;
+}
+
+.title {
+  font-family: var(--titleFont);
+  font-weight: var(--boldFontWeight);
+  font-size: var(--titleFontSize);
+}
+
+.contentContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 10%;
+  padding: 0px 30px;
+}
+
+.driverHeader,
+.driverDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.driverHeader {
+  padding: 0 15px;
+  margin-bottom: 5px;
+  font-family: var(--titleFont);
+  font-size: var(--defaultFontSize);
+  font-weight: var(--boldFontWeight);
+}
+
+.driverDiv {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: var(--dropShadow);
+  padding: 15px;
+  margin-bottom: 5px;
+  font-family: var(--textFont);
+  font-size: var(--defaultFontSize);
+  font-weight: var(--mediumFontWeight);
+}
+
+.cellDiv {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cellDiv:last-of-type {
+  justify-content: center;
+}
+
+.addDriverButton,
+.editButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  border-radius: 10px;
+  margin: 10px 0px;
+  padding: 25px 20px;
+  background-color: var(--red);
+  color: #fff;
+  text-align: center;
+  line-height: 100%;
+  font-family: var(--titleFont);
+  font-size: var(--mediumFontSize);
+  font-weight: var(--boldFontWeight);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.editButton {
+  padding: 15px 20px;
+  margin: 0;
+}
+
+.addDriverButton:hover,
+.editButton:hover {
+  background-color: #aa0808;
+}
