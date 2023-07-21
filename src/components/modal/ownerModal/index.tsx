@@ -3,7 +3,9 @@ import Image from "next/image";
 import CloseIcon from "../../../../public/icons/close.svg";
 
 interface OwnerModal {
-  title: string;
+  funcao: string;
+  aberto: boolean;
+  fechar: (value: any) => void;
 }
 
 export default function OwnerModal(props: OwnerModal) {
@@ -13,17 +15,24 @@ export default function OwnerModal(props: OwnerModal) {
         <div className={styles.header}>
           <div
             className={styles.closeButton}
-            // onClick={() => props.fechar(false)}
+            onClick={() => props.fechar(false)}
           >
             <Image src={CloseIcon} width={25} height={25} alt="" />
           </div>
-          <span className={styles.title}>{props.title} Proprietário</span>
+          <span className={styles.title}>{props.funcao} Proprietário</span>
         </div>
 
         <div className={styles.contentContainer}>
-
           <span className={styles.subTitle}>Informações Proprietário</span>
           <div className={styles.inputsDiv}>
+            <div className={styles.inputWrapper}>
+              <span className={styles.inputText}>Situação</span>
+              <select className={styles.select} name="situacao" id="situacao">
+                <option value="ativo">Ativo</option>
+                <option value="inativo">Inativo</option>
+                <option value="pendente">Pendente</option>
+              </select>
+            </div>
             <div className={styles.inputWrapper}>
               <span className={styles.inputText}>Nome*</span>
               <input className={styles.input} type="text" required />
@@ -46,7 +55,7 @@ export default function OwnerModal(props: OwnerModal) {
             </div>
           </div>
 
-          <div className={styles.divider}/>
+          <div className={styles.divider} />
 
           <span className={styles.subTitle}>Contato</span>
           <div className={styles.inputsDiv}>
@@ -85,9 +94,9 @@ export default function OwnerModal(props: OwnerModal) {
               </div>
             </div>
           </div>
-          
-          <div className={styles.divider}/>
-          
+
+          <div className={styles.divider} />
+
           <span className={styles.subTitle}>Endereço</span>
           <div className={styles.inputsDiv}>
             <div className={styles.inputWrapper}>
@@ -115,12 +124,11 @@ export default function OwnerModal(props: OwnerModal) {
               <input className={styles.input} type="text" />
             </div>
           </div>
-
         </div>
 
         <div className={styles.footer}>
           <div className={styles.button}>
-            <span>{props.title === "Editar" ? "Salvar" : "Cadastrar"}</span>
+            <span>{props.funcao === "Editar" ? "Salvar" : "Cadastrar"}</span>
           </div>
         </div>
       </div>

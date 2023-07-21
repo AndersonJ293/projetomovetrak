@@ -4,6 +4,8 @@ import CloseIcon from "../../../../public/icons/close.svg";
 
 interface vehicleModal {
   title: string;
+  aberto: boolean;
+  fechar: (value: any) => void;
 }
 
 export default function VehicleModal(props: vehicleModal) {
@@ -13,7 +15,7 @@ export default function VehicleModal(props: vehicleModal) {
         <div className={styles.header}>
           <div
             className={styles.closeButton}
-            // onClick={() => props.fechar(false)}
+            onClick={() => props.fechar(false)}
           >
             <Image src={CloseIcon} width={25} height={25} alt="" />
           </div>

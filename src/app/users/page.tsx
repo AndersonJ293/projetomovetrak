@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import NavBar from "@/components/navbar";
 import styles from "./users.module.css";
 import HeaderLine from "@/components/headerLine";
@@ -39,38 +39,46 @@ export default function Usuarios() {
   ];
 
   const botaoCadastrar = () => {
-    setFuncaoModal("Cadastrar")
-    setModalAberto(true)
-  }
+    setFuncaoModal("Cadastrar");
+    setModalAberto(true);
+  };
 
   const botaoEditar = () => {
-    setFuncaoModal("Editar")
-    setNomeModal("Jeronimo")
-    setEmailModal("matheushora16@fmeial.com")
-    setLoginModal("hora@login")
-    setTipoUsuarioModal("admin")
-    setModalAberto(true)
-  }
+    setFuncaoModal("Editar");
+    setNomeModal("Teste");
+    setEmailModal("teste@movetrak.com");
+    setLoginModal("teste@login");
+    setTipoUsuarioModal("admin");
+    setModalAberto(true);
+  };
 
   function renderizarModal() {
     if (funcaoModal === "Cadastrar") {
       return (
-        <UserRegistrationModal funcao={funcaoModal} aberto={modalAberto} fechar={setModalAberto} />
-      )
+        <UserRegistrationModal
+          funcao={funcaoModal}
+          aberto={modalAberto}
+          fechar={setModalAberto}
+        />
+      );
     }
     return (
-      <UserRegistrationModal funcao={funcaoModal} nome={nomeModal} email={emailModal} login={loginModal} tipoUsuario={tipoUsuarioModal} aberto={modalAberto} fechar={setModalAberto} />
-    )
+      <UserRegistrationModal
+        funcao={funcaoModal}
+        nome={nomeModal}
+        email={emailModal}
+        login={loginModal}
+        tipoUsuario={tipoUsuarioModal}
+        aberto={modalAberto}
+        fechar={setModalAberto}
+      />
+    );
   }
 
   return (
     <>
       <NavBar />
-      {modalAberto ?
-        renderizarModal()
-        :
-        ""
-      }
+      {modalAberto ? renderizarModal() : ""}
       <div className={styles.container}>
         <HeaderLine />
         <div className={styles.screen}>
@@ -86,7 +94,9 @@ export default function Usuarios() {
               <ButtonList
                 titleButton="Editar"
                 iconButton={edit}
-                actionButton={() => { botaoEditar() }}
+                actionButton={() => {
+                  botaoEditar();
+                }}
                 secondaryButtons={secondaryButtons}
               />
             }

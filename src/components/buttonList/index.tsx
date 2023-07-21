@@ -3,10 +3,10 @@ import Image from "next/image";
 import styles from "./buttonList.module.css";
 
 interface ButtonListProps {
-  titleButton?: any
-  iconButton?: any
-  actionButton?: any
-  secondaryButtons?: any
+  titleButton?: any;
+  iconButton?: any;
+  actionButton?: any;
+  secondaryButtons?: any;
 }
 
 const ButtonList = (props: ButtonListProps) => {
@@ -16,7 +16,7 @@ const ButtonList = (props: ButtonListProps) => {
         <button
           key={index}
           className={styles.secondaryButton}
-          onClick={undefined}
+          onClick={button.action}
         >
           <Image src={button.icon} alt={"Butão"} width={18} height={18} />
         </button>

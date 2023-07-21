@@ -5,8 +5,10 @@ import styles from "./modal.module.css";
 import CloseIcon from "../../../../public/icons/close.svg";
 
 interface ModalContactsProps {
-  title: string
-  listItems?: any
+  title: string;
+  listItems?: any;
+  aberto: boolean;
+  fechar: (value: any) => void;
 }
 
 const listItemsMock = [
@@ -35,7 +37,7 @@ const ModalContacts = (props: ModalContactsProps) => {
           <h2 className={styles.title}>{props.title}</h2>
           <div
             className={styles.closeButton}
-            // onClick={() => props.fechar(false)}
+            onClick={() => props.fechar(false)}
           >
             <Image src={CloseIcon} width={25} height={25} alt="" />
           </div>
