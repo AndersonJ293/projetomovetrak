@@ -5,21 +5,22 @@ import styles from "./modal.module.css";
 import CloseIcon from "../../../../public/icons/close.svg";
 
 interface ReportEditModalProps {
-  title: string
-  onClose?: any
-  listItems?: any
-  subtitle: string
-  otherLists?: any
-  label: string
-  value?: any
-  buttonText: string
+  title: string;
+  listItems?: any;
+  subtitle?: string;
+  otherLists?: any;
+  label?: string;
+  value?: any;
+  buttonText?: string;
+  aberto: boolean;
+  fechar: (value: any) => void;
 }
 
 const listItemsMock = [
   {
     name: "Anderson Junior",
     subtitle: "Relatório Semanal Prefeitura",
-  }
+  },
 ];
 
 const otherListsMock = [
@@ -41,7 +42,7 @@ const ReportEditModal = (props: ReportEditModalProps) => {
           <h2 className={styles.title}>{props.title}</h2>
           <div
             className={styles.closeButton}
-            // onClick={() => props.fechar(false)}
+            onClick={() => props.fechar(false)}
           >
             <Image src={CloseIcon} width={25} height={25} alt="" />
           </div>

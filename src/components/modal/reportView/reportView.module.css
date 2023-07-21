@@ -93,10 +93,15 @@
 
 .reportTable > thead {
   font-weight: var(--mediumFontWeight);
+  border-bottom: 1px solid var(--darkGray);
 }
 
 .reportTable > tbody {
   font-weight: var(--regularFontWeight);
+}
+
+.reportTable > tbody > tr {
+  border-bottom: 1px solid var(--darkGray);
 }
 
 .reportTable > thead > tr > td {

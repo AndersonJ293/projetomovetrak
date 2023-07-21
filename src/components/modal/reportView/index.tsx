@@ -4,6 +4,8 @@ import CloseIcon from "../../../../public/icons/close.svg";
 
 interface ReportView {
   reportName: string;
+  aberto: boolean;
+  fechar: (value: any) => void;
 }
 
 export default function ReportView(props: ReportView) {
@@ -13,7 +15,7 @@ export default function ReportView(props: ReportView) {
         <div className={styles.header}>
           <div
             className={styles.closeButton}
-            // onClick={() => props.fechar(false)}
+            onClick={() => props.fechar(false)}
           >
             <Image src={CloseIcon} width={25} height={25} alt="" />
           </div>
@@ -41,8 +43,6 @@ export default function ReportView(props: ReportView) {
               </tr>
             </thead>
 
-            <div className={styles.divider} />
-
             <tbody className={styles.tableBody}>
               <tr>
                 <td>22/06/2023</td>
@@ -52,7 +52,6 @@ export default function ReportView(props: ReportView) {
                 <td>-12.142593, -44.990044</td>
               </tr>
             </tbody>
-            <div className={styles.divider} />
 
             <tfoot></tfoot>
           </table>
