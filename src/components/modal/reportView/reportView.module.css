@@ -1,0 +1,104 @@
+.modalBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modalBackground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContainer {
+  background-color: var(--gray);
+  /* padding: 30px; */
+  width: 60%;
+  height: 70%;
+  border-radius: 10px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--modalBoxShadow);
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  margin: 20px auto;
+  background-color: #8f8e982c;
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  width: 58.5%;
+  border-radius: 10px;
+  border-bottom: 1px solid #8f8e982c;
+  background-color: var(--gray);
+}
+
+.closeButton {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.closeButton:hover {
+  background-color: #e1e1ea;
+}
+
+.title {
+  font-family: var(--titleFont);
+  font-weight: var(--boldFontWeight);
+  font-size: var(--titleFontSize);
+}
+
+.contentContainer {
+  margin: 10% 0 5% 0;
+  width: 95%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 0px 30px;
+  overflow-x: auto;
+}
+
+.reportHeader {
+  width: 95%;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  font-family: var(--textFont);
+  font-size: var(--defaultFontSize);
+  font-weight: var(--mediumFontWeight);
+}
+
+.reportTable {
+  width: 100%;
+  font-family: var(--textFont);
+  font-size: var(--defaultFontSize);
+}
+
+.reportTable > thead {
+  font-weight: var(--mediumFontWeight);
+}
+
+.reportTable > tbody {
+  font-weight: var(--regularFontWeight);
+}
+
+.reportTable > thead > tr > td {
+  padding-right: 60px;
+}
