@@ -19,7 +19,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  overflow-y: auto;
   box-shadow: var(--modalBoxShadow);
 }
 
@@ -67,28 +66,19 @@
 }
 
 .contentContainer {
-  margin-top: 10%;
-  padding: 0px 30px;
-}
-
-.subTitle {
+  margin: 10% 0;
   width: 100%;
-  padding: 0px 10px;
-  font-family: var(--titleFont);
-  font-weight: var(--boldFontWeight);
-  font-size: var(--titleFontSize);
+  padding: 0px 30px;
+  overflow-y: auto;
 }
 
-.inputsDiv {
+.reportSelector,
+.reportParameters {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-}
-
-.inputsDiv:last-of-type {
-  margin-bottom: calc(10% + 20px);
 }
 
 .inputWrapper {
@@ -101,6 +91,37 @@
   margin: 10px 0px;
 }
 
+.datePeriod {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
+  margin: 10px 0;
+}
+
+.dateSelector {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
+  flex-direction: column;
+  font-family: var(--textFont);
+  font-size: var(--defaultFontSize);
+  font-weight: var(--mediumFontWeight);
+}
+
+.dateInputWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 97%;
+  height: 50%;
+  margin: 10px 0;
+}
+
 .inputText {
   font-family: var(--textFont);
   font-size: var(--defaultFontSize);
@@ -110,7 +131,8 @@
 }
 
 .input,
-.select {
+.select,
+.dateInput {
   outline: none;
   border: none;
   padding: 10px 20px;
@@ -124,16 +146,9 @@
   font-weight: var(--regularFontWeight);
 }
 
-.input:disabled {
-  background-color: #e7e7e7;
-}
-
-.contactButtonDiv {
-  display: flex;
-  width: 50%;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid red;
+.dateInput {
+  padding: 10px;
+  margin: 0 5px;
 }
 
 .footer {
@@ -171,4 +186,14 @@
 
 .button:hover {
   background-color: #aa0808;
+}
+
+.userData {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 90%;
+  font-family: var(--textFont);
+  font-size: var(--mediumFontSize);
+  font-weight: var(--regularFontWeight);
 }

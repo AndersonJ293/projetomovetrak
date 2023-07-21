@@ -19,7 +19,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  overflow-y: auto;
   box-shadow: var(--modalBoxShadow);
 }
 
@@ -47,13 +46,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  right: 20px;
-  top: 30px;
+  top: 10px;
+  right: 10px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .closeButton:hover {
@@ -67,8 +66,9 @@
 }
 
 .contentContainer {
-  margin-top: 10%;
+  margin: 10% 0;
   padding: 0px 30px;
+  overflow-y: auto;
 }
 
 .subTitle {
@@ -85,10 +85,6 @@
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-}
-
-.inputsDiv:last-of-type {
-  margin-bottom: calc(10% + 20px);
 }
 
 .inputWrapper {
@@ -109,7 +105,8 @@
   width: 95%;
 }
 
-.input, .select {
+.input,
+.select {
   outline: none;
   border: none;
   padding: 10px 20px;
@@ -121,6 +118,10 @@
   font-family: var(--textFont);
   font-size: var(--mediumFontSize);
   font-weight: var(--regularFontWeight);
+}
+
+.input:disabled {
+  background-color: #e7e7e7;
 }
 
 .contactButtonDiv {
@@ -161,7 +162,7 @@
   font-size: var(--mediumFontSize);
   font-weight: var(--boldFontWeight);
   cursor: pointer;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .button:hover {
