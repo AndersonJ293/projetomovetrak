@@ -9,6 +9,8 @@ import tash from "../../../public/icons/tash.svg";
 import ButtonList from "@/components/buttonList";
 import { useState } from "react";
 import UserRegistrationModal from "@/components/modal/userRegistration";
+import ModalContacts from "@/components/modal/contacts";
+import ConfirmDeletion from "@/components/modal/confirmDeletion";
 
 export default function Usuarios() {
   const [modalAberto, setModalAberto] = useState(false);
@@ -17,23 +19,20 @@ export default function Usuarios() {
   const [emailModal, setEmailModal] = useState("");
   const [loginModal, setLoginModal] = useState("");
   const [tipoUsuarioModal, setTipoUsuarioModal] = useState("");
-
-  // function cadastrarUsuario() {
-  //   setFuncaoModal("Cadastrar")
-  //   setModalAberto(true)
-  // }
+  const [modalContatoAberto, setModalContatoAberto] = useState(false);
+  const [deleteModalAberto, setDeleteModalAberto] = useState(false);
 
   const secondaryButtons = [
     {
       icon: phone,
       action: () => {
-        console.log("modal vizualiar");
+        setModalContatoAberto(true);
       },
     },
     {
       icon: tash,
       action: () => {
-        console.log("modal apagar");
+        setDeleteModalAberto(true);
       },
     },
   ];
@@ -74,11 +73,32 @@ export default function Usuarios() {
       />
     );
   }
+  function renderizarContato() {
+    return (
+      <ModalContacts
+        title="Contato"
+        aberto={modalContatoAberto}
+        fechar={setModalContatoAberto}
+      />
+    );
+  }
 
+  function renderizarDelete() {
+    return (
+      <ConfirmDeletion
+        title="Apagar Usuário"
+        description="Tem certeza que deseja apagar esse usuário?"
+        aberto={deleteModalAberto}
+        fechar={setDeleteModalAberto}
+      />
+    );
+  }
   return (
     <>
       <NavBar />
       {modalAberto ? renderizarModal() : ""}
+      {modalContatoAberto ? renderizarContato() : ""}
+      {deleteModalAberto ? renderizarDelete() : ""}
       <div className={styles.container}>
         <HeaderLine />
         <div className={styles.screen}>
