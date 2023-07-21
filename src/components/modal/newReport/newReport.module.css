@@ -91,6 +91,25 @@
   margin: 10px 0px;
 }
 
+.multiInputWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 10px 0px;
+}
+
+.inputLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  margin-bottom: 15px;
+  position: relative;
+}
+
 .datePeriod {
   display: flex;
   align-items: center;
@@ -101,7 +120,6 @@
 }
 
 .dateSelector {
-  margin-top: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,6 +146,35 @@
   font-weight: var(--mediumFontWeight);
   margin: 10px 0px;
   width: 95%;
+}
+
+.inputSubtitle {
+  font-family: var(--textFont);
+  font-size: var(--mediumFontSize);
+  font-weight: var(--mediumFontWeight);
+  margin-right: 20px;
+  white-space: nowrap;
+}
+
+.multiInput {
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  height: 30%;
+  flex: 1;
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: var(--dropShadow);
+  font-family: var(--textFont);
+  font-size: var(--mediumFontSize);
+  font-weight: var(--regularFontWeight);
+}
+
+.inputIcon {
+  position: absolute;
+  z-index: 2;
+  right: 15px;
 }
 
 .input,
@@ -196,4 +243,15 @@
   font-family: var(--textFont);
   font-size: var(--mediumFontSize);
   font-weight: var(--regularFontWeight);
+}
+
+.userLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.littleIcon {
+  margin-right: 5px;
 }

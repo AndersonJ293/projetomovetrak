@@ -1,6 +1,11 @@
 import styles from "./newReport.module.css";
 import Image from "next/image";
 import CloseIcon from "../../../../public/icons/close.svg";
+import UserIcon from "../../../../public/icons/user.svg";
+import CalendarIcon from "../../../../public/icons/calendar.svg";
+import NoteIcon from "../../../../public/icons/blacknote.svg";
+import BrowserIcon from "../../../../public/icons/browser.svg";
+
 
 export default function NewReport() {
   return (
@@ -38,7 +43,7 @@ export default function NewReport() {
 
           <div className={styles.reportParameters}>
             <div className={styles.dateSelector}>
-              Período
+              <span className={styles.inputText}>Período</span>
               <div className={styles.dateInputWrapper}>
                 <span>De </span>
                 <input className={styles.dateInput} type="datetime-local" />
@@ -63,12 +68,42 @@ export default function NewReport() {
               <span className={styles.inputText}>Grupo de Veículos</span>
               <input className={styles.input} type="text" required />
             </div>
+            <div className={styles.multiInputWrapper}>
+              <span className={styles.inputText}>Parâmetros</span>
+              <div className={styles.inputLine}>
+                <span className={styles.inputSubtitle}>Tensão da Bateria</span>
+                <input className={styles.multiInput} type="text" required />
+              </div>
+              <div className={styles.inputLine}>
+                <span className={styles.inputSubtitle}>Tempo para Validação</span>
+                <input className={styles.multiInput} type="text" required />
+              </div>
+            </div>
+            <div className={styles.multiInputWrapper}>
+              <span className={styles.inputText}>Importação de Dados</span>
+              <div className={styles.inputLine}>
+                <span className={styles.inputSubtitle}>Arquivo</span>
+                <input className={styles.multiInput} type="text" placeholder="Escolha um arquivo" required />
+                <Image className={styles.inputIcon} src={NoteIcon} width={20} height={20} alt="Ícone" />
+              </div>
+              <div className={styles.inputLine}>
+                <span className={styles.inputSubtitle}>API</span>
+                <input className={styles.multiInput} type="text" required />
+                <Image className={styles.inputIcon} src={BrowserIcon} width={20} height={20} alt="Ícone" />
+              </div>
+            </div>
           </div>
         </div>
         <div className={styles.footer}>
           <div className={styles.userData}>
-            <p>Responsável: Anderson Junior</p>
-            <p>Data: 23/06/2023 16:15</p>
+            <div className={styles.userLine}>
+              <Image className={styles.littleIcon} src={UserIcon} width={15} height={15} alt="Ícone" />
+              <p>Responsável: Anderson Junior</p>
+            </div>
+            <div className={styles.userLine}>
+              <Image className={styles.littleIcon} src={CalendarIcon} width={15} height={15} alt="Ícone" />
+              <p>Data: 23/06/2023 16:15</p>
+            </div>
           </div>
           <div className={styles.button}>
             <span>Salvar</span>
