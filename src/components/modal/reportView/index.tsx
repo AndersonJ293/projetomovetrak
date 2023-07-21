@@ -18,7 +18,7 @@ export default function ReportView(props: ReportView) {
             <Image src={CloseIcon} width={25} height={25} alt="" />
           </div>
           <span className={styles.title}>
-            Visualizar Relatório "{props.reportName}"
+            Visualizar Relatório {props.reportName}
           </span>
         </div>
         <div className={styles.contentContainer}>
