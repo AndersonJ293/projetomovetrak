@@ -82,11 +82,11 @@ export default function Relatorios() {
 
   return (
     <>
+      <NavBar />
       {modalAberto ? renderizarModal() : ""}
       {editModalAberto ? renderizarEdit() : ""}
       {viewModalAberto ? renderizarView() : ""}
       {deleteModalAberto ? renderizarDelete() : ""}
-      <NavBar />
 
       <div className={styles.container}>
         <HeaderLine />

@@ -1,5 +1,4 @@
-'use client';
-import NavBar from "@/components/navbar";
+"use client";
 import styles from "./dashboard.module.css";
 import RotasDashboard from "@/components/dashboard/rotas";
 import RegistrosDashboard from "@/components/dashboard/registros";
@@ -7,6 +6,7 @@ import Grafico from "@/components/dashboard/grafico";
 import Lembretes from "@/components/dashboard/lembretes";
 import Total from "@/components/dashboard/total";
 import HeaderLine from "@/components/headerLine";
+import NavBar from "@/components/navbar";
 
 export default function DashBoard() {
   return (

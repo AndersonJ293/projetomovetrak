@@ -1,77 +1,65 @@
 "use client";
 import { useState, useContext } from "react";
 import Image from "next/image";
-import styles from "./navbar.module.css";
 import Logo from "../../../public/logo.svg";
 import MinimalLogo from "../../../public/minimalLogo.svg";
 import AddUser from "../../../public/icons/addUser.svg";
-import Exit from "../../../public/icons/exit.svg";
-import File from "../../../public/icons/file.svg";
-import Group from "../../../public/icons/group.svg";
-import Route from "../../../public/icons/route.svg";
-import Arrow from "../../../public/icons/arrow.svg";
 import MapPin from "../../../public/icons/pin.svg";
+import File from "../../../public/icons/file.svg";
+import BellPin from "../../../public/icons/bell-pin.svg";
+import Group from "../../../public/icons/group.svg";
+import Arrow from "../../../public/icons/arrow.svg";
+import Exit from "../../../public/icons/exit.svg";
+import styles from "./navbar.module.css";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { UserContext } from "@/contexts/userContext";
 
 export default function NavBar() {
   const [aberto, setAberto] = useState(false);
   const { handleLogOut } = useContext(UserContext);
-  const pathname = usePathname();
+  const [botaoAberto, setBotaoAberto] = useState("");
+
+  function handleBotao(botao: string) {
+    !aberto
+      ? setAberto(true)
+      : botaoAberto === botao
+      ? setBotaoAberto("")
+      : setBotaoAberto(botao);
+  }
+  function fecharMenu() {
+    setAberto(!aberto);
+    setBotaoAberto("");
+  }
 
   return (
     <div
-      className={`${styles.container} ${aberto ? "" : styles.containerClosed}`}
+      className={`${styles.containerAberto} ${
+        aberto ? "" : styles.containerClosed
+      }`}
     >
-      {/* logo  */}
-      <Link title="DashBoard" href={"/dashboard"}>
-        <div
-          className={`${styles.buttonDiv} ${
-            aberto ? "" : styles.buttonDivFechado
-          } ${pathname === "/dashboard" ? styles.activeButton : ""} `}
-        >
-          <Image
-            className={styles.logo}
-            width={0}
-            height={35}
-            src={aberto ? Logo : MinimalLogo}
-            alt="Logo Movetrak"
-          />
-        </div>
-      </Link>
-
-      <div className={styles.buttonList}>
-        {/* rastreamento */}
-        <Link title="Rastreamento" href={"/rastreamento"}>
-          <div
-            className={`${styles.buttonDiv} ${
-              aberto ? "" : styles.buttonDivFechado
-            } ${pathname === "/rastreamento" ? styles.activeButton : ""}`}
-          >
+      <div className={styles.header}>
+        <Link title="DashBoard" href={"/dashboard"}>
+          <div className={styles.logoDiv}>
             <Image
-              className={styles.menuIcon}
-              height={25}
-              width={25}
-              src={MapPin}
-              alt="Adicionar Usuário"
+              className={styles.logo}
+              width={0}
+              height={35}
+              src={aberto ? Logo : MinimalLogo}
+              alt="Logo Movetrak"
             />
-            <span
-              className={`${styles.menuText} ${
-                aberto ? "" : styles.menuTextFechado
-              }`}
-            >
-              Rastreamento
-            </span>
           </div>
         </Link>
+      </div>
 
-        {/* proprietarios */}
-        <Link title="Proprietários" href={"/proprietarios"}>
+      <div className={styles.pagesContainer}>
+        <div
+          className={`${styles.pageDiv} ${aberto ? "" : styles.pageDivFechado}`}
+        >
           <div
-            className={`${styles.buttonDiv} ${
-              aberto ? "" : styles.buttonDivFechado
-            } ${pathname === "/proprietarios" ? styles.activeButton : ""}`}
+            className={`${styles.collapseButton} ${
+              botaoAberto === "cadastro" ? styles.collapseButtonOpen : ""
+            } ${aberto ? "" : styles.collapseButtonFechado}`}
+            onClick={() => handleBotao("cadastro")}
           >
             <Image
               className={styles.menuIcon}
@@ -79,23 +67,101 @@ export default function NavBar() {
               width={25}
               src={AddUser}
               alt="Adicionar Usuário"
-            />
+            />{" "}
             <span
-              className={`${styles.menuText} ${
-                aberto ? "" : styles.menuTextFechado
-              }`}
+              style={
+                aberto
+                  ? { display: "inline", whiteSpace: "nowrap" }
+                  : { display: "none" }
+              }
             >
-              Proprietários
+              Cadastro
             </span>
+            <Image
+              className={aberto ? styles.arrow : styles.arrowHidden}
+              height={15}
+              width={15}
+              src={Arrow}
+              alt="Seta"
+            />
           </div>
-        </Link>
-
-        {/* relatorios */}
-        <Link title="Relatórios" href={"/relatorios"}>
           <div
-            className={`${styles.buttonDiv} ${
-              aberto ? "" : styles.buttonDivFechado
-            } ${pathname === "/relatorios" ? styles.activeButton : ""}`}
+            className={`${styles.contentHidden} ${
+              botaoAberto === "cadastro" ? styles.content : ""
+            }`}
+          >
+            <div className={styles.indentedButtons}>
+              <Link title="Cliente" href={"/proprietarios"}>
+                <div className={styles.button}>● Cliente</div>
+              </Link>
+              <div className={styles.indentedButtons}>
+                <div className={styles.secButton}>Veículo</div>
+                <div className={styles.secButton}>Motorista</div>
+              </div>
+              <div className={styles.button}>● Rota</div>
+              <div className={styles.indentedButtons}>
+                <div className={styles.secButton}>Vincular Rota</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className={`${styles.pageDiv} ${aberto ? "" : styles.pageDivFechado}`}
+        >
+          <div
+            className={`${styles.collapseButton} ${
+              botaoAberto === "monitoramento" ? styles.collapseButtonOpen : ""
+            }${aberto ? "" : styles.collapseButtonFechado}`}
+            onClick={() => handleBotao("monitoramento")}
+            title="Monitoramento"
+          >
+            <Image
+              className={styles.menuIcon}
+              height={25}
+              width={25}
+              src={MapPin}
+              alt="Monitoramento"
+            />{" "}
+            <span
+              style={
+                aberto
+                  ? { display: "inline", whiteSpace: "nowrap" }
+                  : { display: "none" }
+              }
+            >
+              Monitoramento
+            </span>
+            <Image
+              className={aberto ? styles.arrow : styles.arrowHidden}
+              height={15}
+              width={15}
+              src={Arrow}
+              alt="Seta"
+            />
+          </div>
+          <div
+            className={`${styles.contentHidden} ${
+              botaoAberto === "monitoramento" ? styles.content : ""
+            }`}
+          >
+            <div className={styles.indentedButtons}>
+              <div className={styles.button}>● Localização</div>
+              <div className={styles.button}>● Rotas</div>
+              <div className={styles.button}>● Trajetos</div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className={`${styles.pageDiv} ${aberto ? "" : styles.pageDivFechado}`}
+        >
+          <div
+            className={`${styles.collapseButton} ${
+              botaoAberto === "relatorios" ? styles.collapseButtonOpen : ""
+            }${aberto ? "" : styles.collapseButtonFechado}`}
+            onClick={() => handleBotao("relatorios")}
+            title="Relatórios"
           >
             <Image
               className={styles.menuIcon}
@@ -103,97 +169,174 @@ export default function NavBar() {
               width={25}
               src={File}
               alt="Relatórios"
-            />
+            />{" "}
             <span
-              className={`${styles.menuText} ${
-                aberto ? "" : styles.menuTextFechado
-              }`}
+              style={
+                aberto
+                  ? { display: "inline", whiteSpace: "nowrap" }
+                  : { display: "none" }
+              }
             >
               Relatórios
             </span>
+            <Image
+              className={aberto ? styles.arrow : styles.arrowHidden}
+              height={15}
+              width={15}
+              src={Arrow}
+              alt="Seta"
+            />
           </div>
-        </Link>
-        {/* rotas */}
-        <Link title="Rotas" href={"/rotas"}>
           <div
-            className={`${styles.buttonDiv} ${
-              aberto ? "" : styles.buttonDivFechado
-            } ${pathname === "/rotas" ? styles.activeButton : ""}`}
+            className={`${styles.contentHidden} ${
+              botaoAberto === "relatorios" ? styles.content : ""
+            }`}
+          >
+            <div className={styles.indentedButtons}>
+              <div className={styles.button}>● Novo Relatório</div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className={`${styles.pageDiv} ${aberto ? "" : styles.pageDivFechado}`}
+        >
+          <div
+            className={`${styles.collapseButton} ${
+              botaoAberto === "alertas" ? styles.collapseButtonOpen : ""
+            }${aberto ? "" : styles.collapseButtonFechado}`}
+            onClick={() => handleBotao("alertas")}
+            title="Alertas"
           >
             <Image
               className={styles.menuIcon}
               height={25}
               width={25}
-              src={Route}
-              alt="Rotas"
-            />
+              src={BellPin}
+              alt="Alertas"
+            />{" "}
             <span
-              className={`${styles.menuText} ${
-                aberto ? "" : styles.menuTextFechado
-              }`}
+              style={
+                aberto
+                  ? { display: "inline", whiteSpace: "nowrap" }
+                  : { display: "none" }
+              }
             >
-              Rotas
+              Alertas
             </span>
+            <Image
+              className={aberto ? styles.arrow : styles.arrowHidden}
+              height={15}
+              width={15}
+              src={Arrow}
+              alt="Seta"
+            />
           </div>
-        </Link>
-        {/* usuarios */}
-        <Link title="Usuários" href={"/users"}>
           <div
-            className={`${styles.buttonDiv} ${
-              aberto ? "" : styles.buttonDivFechado
-            } ${pathname === "/users" ? styles.activeButton : ""} `}
+            className={`${styles.contentHidden} ${
+              botaoAberto === "alertas" ? styles.content : ""
+            }`}
+          >
+            <div className={styles.indentedButtons}>
+              <div className={styles.button}>● Configurar Alertas</div>
+              <div className={styles.button}>● Relatório de Alertas</div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          className={`${styles.pageDiv} ${aberto ? "" : styles.pageDivFechado}`}
+        >
+          <div
+            className={`${styles.collapseButton} ${
+              botaoAberto === "admin" ? styles.collapseButtonOpen : ""
+            }${aberto ? "" : styles.collapseButtonFechado}`}
+            onClick={() => handleBotao("admin")}
+            title="Painel Admin"
           >
             <Image
               className={styles.menuIcon}
               height={25}
               width={25}
               src={Group}
-              alt="Usuários"
-            />
+              alt="Admin"
+            />{" "}
             <span
-              className={`${styles.menuText} ${
-                aberto ? "" : styles.menuTextFechado
-              }`}
+              style={
+                aberto
+                  ? { display: "inline", whiteSpace: "nowrap" }
+                  : { display: "none" }
+              }
             >
-              Usuários
+              Painel Admin
             </span>
+            <Image
+              className={aberto ? styles.arrow : styles.arrowHidden}
+              height={15}
+              width={15}
+              src={Arrow}
+              alt="Seta"
+            />
           </div>
-        </Link>
+          <div
+            className={`${styles.contentHidden} ${
+              botaoAberto === "admin" ? styles.content : ""
+            }`}
+          >
+            <div className={styles.indentedButtons}>
+              <div className={styles.button}>● Usuários</div>
+            </div>
+          </div>
+        </div>
       </div>
-      {/* sair */}
+
       <div
-        onClick={() => handleLogOut()}
-        className={`${styles.buttonDiv} ${styles.logOutButton} ${
-          aberto ? "" : styles.buttonDivFechado
-        }`}
+        className={`${styles.pageDiv} ${aberto ? "" : styles.pageDivFechado}`}
       >
-        <Image
-          className={styles.menuIcon}
-          height={25}
-          width={25}
-          src={Exit}
-          alt="Sair"
-        />
-        <span
-          className={`${styles.menuText} ${
-            aberto ? "" : styles.menuTextFechado
-          }`}
+        <div
+          className={`${styles.collapseButton} ${
+            botaoAberto === "sair" ? styles.collapseButtonOpen : ""
+          }${aberto ? "" : styles.collapseButtonFechado}`}
+          onClick={() => handleLogOut()}
+          title="Sair"
         >
-          Sair
-        </span>
+          <Image
+            className={styles.menuIcon}
+            height={25}
+            width={25}
+            src={Exit}
+            alt="Sair"
+          />{" "}
+          <span
+            style={
+              aberto
+                ? {
+                    display: "flex",
+                    whiteSpace: "nowrap",
+                    width: "100%",
+                    justifyContent: "center",
+                  }
+                : { display: "none" }
+            }
+          >
+            Sair
+          </span>
+        </div>
       </div>
-      {/* hover */}
+
       <div
         className={`${styles.verticalLine} ${
           aberto ? styles.verticalLineAberto : ""
         }`}
-        onClick={() => setAberto(!aberto)}
+        onClick={() => fecharMenu()}
       >
         <div className={styles.floatingButton}>
           <Image
-            className={styles.arrow}
-            width={20}
-            height={20}
+            className={`${styles.verticalLineArrow} ${
+              !aberto ? "" : styles.verticalLineArrowAberto
+            }`}
+            width={15}
+            height={15}
             src={Arrow}
             alt=""
           />
