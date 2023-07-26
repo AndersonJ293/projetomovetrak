@@ -60,6 +60,7 @@ export default function NavBar() {
               botaoAberto === "cadastro" ? styles.collapseButtonOpen : ""
             } ${aberto ? "" : styles.collapseButtonFechado}`}
             onClick={() => handleBotao("cadastro")}
+            title="Cadastro"
           >
             <Image
               className={styles.menuIcon}
@@ -92,15 +93,23 @@ export default function NavBar() {
           >
             <div className={styles.indentedButtons}>
               <Link title="Cliente" href={"/proprietarios"}>
-                <div className={styles.button}>● Cliente</div>
+                <div className={styles.button}>● Clientes</div>
               </Link>
               <div className={styles.indentedButtons}>
-                <div className={styles.secButton}>Veículo</div>
-                <div className={styles.secButton}>Motorista</div>
+                <Link title="Veículo" href={"/veiculos"}>
+                  <div className={styles.secButton}>Veículos</div>
+                </Link>
+                <Link title="Motoristas" href={"/motoristas"}>
+                  <div className={styles.secButton}>Motoristas</div>
+                </Link>
               </div>
-              <div className={styles.button}>● Rota</div>
+              <Link title="Rotas" href={"/rotas"}>
+                <div className={styles.button}>● Rotas</div>
+              </Link>
               <div className={styles.indentedButtons}>
-                <div className={styles.secButton}>Vincular Rota</div>
+                <Link title="Vincular Rota" href={"/rotas"}>
+                  <div className={styles.secButton}>Vincular Rota</div>
+                </Link>
               </div>
             </div>
           </div>
@@ -146,9 +155,15 @@ export default function NavBar() {
             }`}
           >
             <div className={styles.indentedButtons}>
-              <div className={styles.button}>● Localização</div>
-              <div className={styles.button}>● Rotas</div>
-              <div className={styles.button}>● Trajetos</div>
+              <Link title="Localização" href={"/rastreamento"}>
+                <div className={styles.button}>● Localização</div>
+              </Link>
+              <Link title="Rotas" href={"/rotas"}>
+                <div className={styles.button}>● Rotas</div>
+              </Link>
+              <Link title="Trajetos" href={"/trajetos"}>
+                <div className={styles.button}>● Trajetos</div>
+              </Link>
             </div>
           </div>
         </div>
@@ -193,7 +208,9 @@ export default function NavBar() {
             }`}
           >
             <div className={styles.indentedButtons}>
-              <div className={styles.button}>● Novo Relatório</div>
+              <Link title="Novo Relatório" href={"/relatorios"}>
+                <div className={styles.button}>● Novo Relatório</div>
+              </Link>
             </div>
           </div>
         </div>
@@ -238,8 +255,12 @@ export default function NavBar() {
             }`}
           >
             <div className={styles.indentedButtons}>
-              <div className={styles.button}>● Configurar Alertas</div>
-              <div className={styles.button}>● Relatório de Alertas</div>
+              <Link title="Configurar Alertas" href={"/alertas"}>
+                <div className={styles.button}>● Configurar Alertas</div>
+              </Link>
+              <Link title="Relatório de Alertas" href={"/relatorio-alertas"}>
+                <div className={styles.button}>● Relatório de Alertas</div>
+              </Link>
             </div>
           </div>
         </div>
@@ -284,7 +305,9 @@ export default function NavBar() {
             }`}
           >
             <div className={styles.indentedButtons}>
-              <div className={styles.button}>● Usuários</div>
+              <Link title="Usuários" href={"/users"}>
+                <div className={styles.button}>● Usuários</div>
+              </Link>
             </div>
           </div>
         </div>

@@ -18,7 +18,7 @@
 }
 
 .logoDiv {
-  padding: 10px 15px;
+  padding: 10px;
   border-radius: 10px;
 }
 
@@ -151,6 +151,7 @@
   left: 80px;
   position: absolute;
   background-color: #d3d3d300;
+  margin: -20px 0;
   cursor: pointer;
   transition: 0.5s;
 }
